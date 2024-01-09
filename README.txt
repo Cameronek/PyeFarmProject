@@ -30,6 +30,9 @@ To compile frontend:
 npm run dev
 
 
+* Will also likely need to install css-loader (I was late adding this)
+npm install --save-dev css-loader
+
 * If MaterialUI is not working for you, try the following
 npm install @mui/material @mui/styled-engine-sc styled-components
 npm install @mui/icons-material

@@ -1,0 +1,6 @@
+.node
+node_modules/
+__pycache__/
+/frontend/node_moduless
+*.log
+*.tmp
