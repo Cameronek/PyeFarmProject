@@ -21,19 +21,23 @@ export default class PlantPage extends Component{
 
     render() {
         return (
+          <body style={{margin: "0", padding: 0}}>
+            {/* Change to be a grid of 4 different colored rectangles */}
+            <div style={{display: "inline-block", width:"100vw", height:"3vh", background:"green", align:"center" }}></div>
             <Grid container spacing={0.75}>
-              <Grid item xs={1} align ="center"></Grid>
-              <Grid item xs={5} align ="center">
+              {/* <Grid item xs={1} align ="left"></Grid> */}
+              <Grid item xs={false} align ="left">
                 <IconButton roboto-label="home" style={{color:'black'}}>
                   <HomeIcon style={{fontSize:60}}/>
                 </IconButton>
               </Grid>
-              <Grid item xs={5} align ="center">
+              <Grid item xs={false} align ="center">
                 <IconButton roboto-label="home" style={{color:'black'}}>
                   <CameraIcon style={{fontSize:60}}/>
                 </IconButton>
               </Grid>
             </Grid>
+          </body>
         );
     }
 }
