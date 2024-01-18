@@ -2,6 +2,8 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+import temp_reader
+from threading import Thread
 
 
 def main():
@@ -19,4 +21,7 @@ def main():
 
 
 if __name__ == '__main__':
+    temp_thread = Thread(target = temp_reader.temp_reader, args = (4, ))
+    temp_thread.start()
     main()
+    temp_thread.join()
