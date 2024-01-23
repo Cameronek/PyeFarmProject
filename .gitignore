@@ -1,6 +1,7 @@
 .node
 node_modules/
 __pycache__/
-/frontend/node_moduless
+/frontend/node_modules
+/frontend/package-lock.json
 *.log
 *.tmp
