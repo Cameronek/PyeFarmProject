@@ -22,8 +22,11 @@ export default class PlantPage extends Component{
     render() {
         return (
           <body style={{margin: "0", padding: 0}}>
-            {/* Change to be a grid of 4 different colored rectangles */}
+            {/* Solid Rectangle at top of page*/}
+            {/* TODO: Change to be a grid of 4 different colored rectangles*/}
             <div style={{display: "inline-block", width:"100vw", height:"3vh", background:"green", align:"center" }}></div>
+            {/* MUI Home Icon and Camera Icon*/}
+            {/* TODO: Add links to homepage and to camera page*/}
             <Grid container spacing={0.75}>
               {/* <Grid item xs={1} align ="left"></Grid> */}
               <Grid item xs={false} align ="left">
@@ -37,6 +40,9 @@ export default class PlantPage extends Component{
                 </IconButton>
               </Grid>
             </Grid>
+
+            {/* <Grid>
+            </> */}
           </body>
         );
     }
