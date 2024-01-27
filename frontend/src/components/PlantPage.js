@@ -12,6 +12,7 @@ import RadioGroup from "@mui/material/RadioGroup";
 import FormcontrolLabel from "@mui/material/FormControlLabel";
 import HomeIcon from "@mui/icons-material/HomeRounded";
 import CameraIcon from "@mui/icons-material/CameraAltRounded";
+import PlantIcon from "@mui/icons-material/Grass";
 //import '../../static/css/index.css';
 
 export default class PlantPage extends Component{
@@ -24,7 +25,7 @@ export default class PlantPage extends Component{
           <body style={{margin: "0", padding: 0}}>
             {/* Solid Rectangle at top of page*/}
             {/* TODO: Change to be a grid of 4 different colored rectangles*/}
-            <div style={{display: "inline-block", width:"100vw", height:"3vh", background:"green", align:"center" }}></div>
+            <div style={{display: "inline-block", width:"100vw", height:"3vh", background:"red", align:"center" }}></div>
             {/* MUI Home Icon and Camera Icon*/}
             {/* TODO: Add links to homepage and to camera page*/}
             <Grid container spacing={0.75}>
@@ -42,7 +43,8 @@ export default class PlantPage extends Component{
             </Grid>
 
             {/* <Grid>
-            </> */}
+              <HomeIcon style={{fontSize:60, fill: 'green'}}></HomeIcon>
+            </Grid> */}
           </body>
         );
     }
