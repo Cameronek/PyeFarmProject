@@ -25,7 +25,8 @@ export default class PlantPage extends Component{
           <body style={{margin: "0", padding: 0}}>
             {/* Solid Rectangle at top of page*/}
             {/* TODO: Change to be a grid of 4 different colored rectangles*/}
-            <div style={{display: "inline-block", width:"100vw", height:"3vh", background:"red", align:"center" }}></div>
+            <div style={{display: "inline-block", width:"100vw", height:"3vh", background:"green", align:"center" }}></div>
+            
             {/* MUI Home Icon and Camera Icon*/}
             {/* TODO: Add links to homepage and to camera page*/}
             <Grid container spacing={0.75}>
@@ -42,9 +43,15 @@ export default class PlantPage extends Component{
               </Grid>
             </Grid>
 
-            {/* <Grid>
-              <HomeIcon style={{fontSize:60, fill: 'green'}}></HomeIcon>
-            </Grid> */}
+            {/* Plant Icon and Plant Name*/}
+            <Grid>
+              <Grid item xs={false} align="center">
+                <PlantIcon style={{fontSize:90, fill: 'green'}}></PlantIcon>
+              </Grid>
+              <Grid item xs={false} align="center">
+                <b style={{color:"black", font:"Oxygen", fontSize:40}}> PlantName Here</b>
+              </Grid>
+            </Grid>
           </body>
         );
     }
