@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import FormHelperText from "@mui/material/FormHelperText";
 import FormControl from "@mui/material/FormControl"
-import Link from "react-router-dom";
+import {Link } from "react-router-dom";
 import Radio from "@mui/material/Radio";;
 import RadioGroup from "@mui/material/RadioGroup";
 import FormcontrolLabel from "@mui/material/FormControlLabel";
@@ -32,9 +32,11 @@ export default class PlantPage extends Component{
             <Grid container spacing={0.75}>
               {/* <Grid item xs={1} align ="left"></Grid> */}
               <Grid item xs={false} align ="left">
-                <IconButton roboto-label="home" style={{color:'black'}}>
-                  <HomeIcon style={{fontSize:60}}/>
-                </IconButton>
+                <Link to="/">
+                  <IconButton roboto-label="home" style={{color:'black'}}>
+                    <HomeIcon style={{fontSize:60}}/>
+                  </IconButton>
+                </Link>
               </Grid>
               <Grid item xs={false} align ="center">
                 <IconButton roboto-label="home" style={{color:'black'}}>
