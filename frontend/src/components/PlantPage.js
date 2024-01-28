@@ -12,8 +12,11 @@ import RadioGroup from "@mui/material/RadioGroup";
 import FormcontrolLabel from "@mui/material/FormControlLabel";
 import HomeIcon from "@mui/icons-material/HomeRounded";
 import CameraIcon from "@mui/icons-material/CameraAltRounded";
-import PlantIcon from "@mui/icons-material/Grass";
-//import '../../static/css/index.css';
+import PlantIcon from "@mui/icons-material/ParkRounded";
+//import '../../static/css/index.css';s
+
+// Global vars
+let cameraHref = (window.location.href).concat("/cameraview");
 
 export default class PlantPage extends Component{
     constructor(props){
@@ -22,10 +25,10 @@ export default class PlantPage extends Component{
 
     render() {
         return (
-          <body style={{margin: "0", padding: 0}}>
+          <body style={{margin: "0", padding: 0, backgroundColor:"white", height:"100vh", width:"100vw"}}>
             {/* Solid Rectangle at top of page*/}
             {/* TODO: Change to be a grid of 4 different colored rectangles*/}
-            <div style={{display: "inline-block", width:"100vw", height:"3vh", background:"green", align:"center" }}></div>
+            <div style={{display: "inline-block", width:"100vw", height:"3vh", background:"#68AC67", align:"center" }}></div>
             
             {/* MUI Home Icon and Camera Icon*/}
             {/* TODO: Add links to homepage and to camera page*/}
@@ -39,21 +42,76 @@ export default class PlantPage extends Component{
                 </Link>
               </Grid>
               <Grid item xs={false} align ="center">
-                <IconButton roboto-label="home" style={{color:'black'}}>
-                  <CameraIcon style={{fontSize:60}}/>
-                </IconButton>
+                <Link to={cameraHref}>
+                  <IconButton roboto-label="home" style={{color:'black'}}>
+                    <CameraIcon style={{fontSize:60}}/>
+                  </IconButton>
+                </Link>
               </Grid>
             </Grid>
 
             {/* Plant Icon and Plant Name*/}
             <Grid>
               <Grid item xs={false} align="center">
-                <PlantIcon style={{fontSize:90, fill: 'green'}}></PlantIcon>
+                <PlantIcon style={{fontSize:90, fill: '#68AC67'}}></PlantIcon>
               </Grid>
               <Grid item xs={false} align="center">
                 <b style={{color:"black", font:"Oxygen", fontSize:40}}> PlantName Here</b>
               </Grid>
             </Grid>
+
+            {/* Empty Lines for page spacing (probably a better way to do this) */}
+            <Grid>
+            <span>&nbsp;&nbsp;</span>
+            </Grid>
+
+            <Grid>
+            <span>&nbsp;&nbsp;</span>
+            </Grid>
+
+            <Grid>
+            <span>&nbsp;&nbsp;</span>
+            </Grid>
+
+            {/*Headings of each parameter*/}
+            <Grid container spacing={0}>
+              <Grid item xs={false} align ="left">
+                <p style={{width:"4vw"}}>&nbsp;</p>
+              </Grid>
+              <Grid item xs={false} align ="left">
+                <Button disabled="true" style={{width:"20vw", backgroundColor: '#A3BD8B',  border: "3px solid black", borderRadius:"5px"}}>
+                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>Temperature</b>
+                </Button>
+              </Grid>
+              <Grid item xs={false} align ="left">
+                <p style={{width:"4vw"}}>&nbsp;</p>
+              </Grid>
+              <Grid item xs={false} align ="left">
+                <Button disabled="true" style={{width:"20vw", backgroundColor: '#85B658',  border: "3px solid black", borderRadius:"5px"}}>
+                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>Humidity</b>
+                </Button>
+              </Grid>
+              <Grid item xs={false} align ="left">
+                <p style={{width:"4vw"}}>&nbsp;</p>
+              </Grid>
+              <Grid item xs={false} align ="left">
+                <Button disabled="true" style={{width:"20vw", backgroundColor: '#67AE66',  border: "3px solid black", borderRadius:"5px"}}>
+                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>Moisture</b>
+                </Button>
+              </Grid>
+              <Grid item xs={false} align ="left">
+                <p style={{width:"4vw"}}>&nbsp;</p>
+              </Grid>
+              <Grid item xs={false} align ="left">
+                <Button disabled="true" style={{width:"20vw", backgroundColor: '#5F815F',  border: "3px solid black", borderRadius:"5px"}}>
+                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>Harvest</b>
+                </Button>
+              </Grid>
+
+            </Grid>
+
+
+            
           </body>
         );
     }
