@@ -8,5 +8,6 @@ from django.views.generic import RedirectView
 urlpatterns = [
     path('', index),
     path('plant', index),
+    path('plant/cameraview', index),
     re_path(r'^favicon\.ico$',RedirectView.as_view(url='/static/images/favicon.ico'))
 ]
