@@ -25,7 +25,7 @@ export default class PlantPage extends Component{
 
     render() {
         return (
-          <body style={{margin: "0", padding: 0, backgroundColor:"white", height:"100vh", width:"100vw"}}>
+          <body style={{margin: "0", padding: 0, backgroundColor:"white", height:"100vh", width:"100vw", position:"relative"}}>
             {/* Solid Rectangle at top of page*/}
             {/* TODO: Change to be a grid of 4 different colored rectangles*/}
             <div style={{display: "inline-block", width:"100vw", height:"3vh", background:"#68AC67", align:"center" }}></div>
@@ -107,11 +107,99 @@ export default class PlantPage extends Component{
                   <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>Harvest</b>
                 </Button>
               </Grid>
-
             </Grid>
 
+            {/* Empty Lines for page spacing (probably a better way to do this) */}
+            <Grid>
+            <span>&nbsp;&nbsp;</span>
+            </Grid>
 
+            {/* Data Readings to be imported from DB */}
+            <Grid container spacing={0}>
+              <Grid item xs={false} align ="left">
+                <p style={{width:"4vw"}}>&nbsp;</p>
+              </Grid>
+              <Grid item xs={false} align ="left">
+                <Button disabled="true" style={{width:"20vw", height:"35vh",backgroundColor: '#A3BD8B',  border: "3px solid black", borderRadius:"5px"}}>
+                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}> °C <br /> <br /> <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br /> tempVar </b>
+                </Button>
+              </Grid>
+              <Grid item xs={false} align ="left">
+                <p style={{width:"4vw"}}>&nbsp;</p>
+              </Grid>
+              <Grid item xs={false} align ="left">
+                <Button disabled="true" style={{width:"20vw", height:"35vh",backgroundColor: '#85B658',  border: "3px solid black", borderRadius:"5px"}}>
+                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>% <br /> <br /> <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br /> humidityVar</b>
+                </Button>
+              </Grid>
+              <Grid item xs={false} align ="left">
+                <p style={{width:"4vw"}}>&nbsp;</p>
+              </Grid>
+              <Grid item xs={false} align ="left">
+                <Button disabled="true" style={{width:"20vw", height:"35vh",backgroundColor: '#67AE66',  border: "3px solid black", borderRadius:"5px"}}>
+                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}> /1024<br /> <br /> <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br /> moistVar </b>
+                </Button>
+              </Grid>
+              <Grid item xs={false} align ="left">
+                <p style={{width:"4vw"}}>&nbsp;</p>
+              </Grid>
+              <Grid item xs={false} align ="left">
+                <Button disabled="true" style={{width:"20vw", height:"35vh",backgroundColor: '#5F815F',  border: "3px solid black", borderRadius:"5px"}}>
+                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>Days<br /> <br /> <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br /> timeVar </b>
+                </Button>
+              </Grid>
+            </Grid>
             
+
+            {/* Empty Lines for page spacing (probably a better way to do this) */}
+            <Grid>
+            <span>&nbsp;&nbsp;</span>
+            </Grid>
+            <Grid>
+            <span>&nbsp;&nbsp;</span>
+            </Grid>
+
+            {/* Buttons to see variable data/graphs */}
+            {/* TODO: Create Routing to these pages */}
+            
+            <Grid container spacing={0}>
+              <Grid item xs={false} align ="left">
+                <p style={{width:"4vw"}}>&nbsp;</p>
+              </Grid>
+              <Grid item xs={false} align ="left">
+                <Button style={{width:"20vw", backgroundColor: '#D9EFD5',  border: "3px solid black", borderRadius:"5px"}}>
+                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>See Data</b>
+                </Button>
+              </Grid>
+              <Grid item xs={false} align ="left">
+                <p style={{width:"4vw"}}>&nbsp;</p>
+              </Grid>
+              <Grid item xs={false} align ="left">
+                <Button style={{width:"20vw", backgroundColor: '#D9EFD5',  border: "3px solid black", borderRadius:"5px"}}>
+                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>See Data</b>
+                </Button>
+              </Grid>
+              <Grid item xs={false} align ="left">
+                <p style={{width:"4vw"}}>&nbsp;</p>
+              </Grid>
+              <Grid item xs={false} align ="left">
+                <Button style={{width:"20vw", backgroundColor: '#D9EFD5',  border: "3px solid black", borderRadius:"5px"}}>
+                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>See Data</b>
+                </Button>
+              </Grid>
+              <Grid item xs={false} align ="left">
+                <p style={{width:"4vw"}}>&nbsp;</p>
+              </Grid>
+              <Grid item xs={false} align ="left">
+                <Button style={{width:"20vw", backgroundColor: '#D9EFD5',  border: "3px solid black", borderRadius:"5px"}}>
+                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>See Data</b>
+                </Button>
+              </Grid>
+            </Grid>
+
+            <div style={{position:"absolute", bottom:0, display: "inline-block", width:"100vw", height:"3vh", background:"#68AC67", align:"center" }}></div>
+
+
           </body>
         );
     }
