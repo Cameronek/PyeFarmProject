@@ -120,32 +120,32 @@ export default class PlantPage extends Component{
                 <p style={{width:"4vw"}}>&nbsp;</p>
               </Grid>
               <Grid item xs={false} align ="left">
-                <Button disabled="true" style={{width:"20vw", height:"35vh",backgroundColor: '#A3BD8B',  border: "3px solid black", borderRadius:"5px"}}>
-                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}> °C <br /> <br /> <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br /> tempVar </b>
+                <Button disabled="true" style={{width:"20vw", height:"25vh",backgroundColor: '#A3BD8B',  border: "3px solid black", borderRadius:"5px"}}>
+                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}> °C <br /> <br />  <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br />  tempVar </b>
                 </Button>
               </Grid>
               <Grid item xs={false} align ="left">
                 <p style={{width:"4vw"}}>&nbsp;</p>
               </Grid>
               <Grid item xs={false} align ="left">
-                <Button disabled="true" style={{width:"20vw", height:"35vh",backgroundColor: '#85B658',  border: "3px solid black", borderRadius:"5px"}}>
-                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>% <br /> <br /> <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br /> humidityVar</b>
+                <Button disabled="true" style={{width:"20vw", height:"25vh",backgroundColor: '#85B658',  border: "3px solid black", borderRadius:"5px"}}>
+                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>% <br /> <br /> <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br />  humidityVar</b>
                 </Button>
               </Grid>
               <Grid item xs={false} align ="left">
                 <p style={{width:"4vw"}}>&nbsp;</p>
               </Grid>
               <Grid item xs={false} align ="left">
-                <Button disabled="true" style={{width:"20vw", height:"35vh",backgroundColor: '#67AE66',  border: "3px solid black", borderRadius:"5px"}}>
-                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}> /1024<br /> <br /> <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br /> moistVar </b>
+                <Button disabled="true" style={{width:"20vw", height:"25vh",backgroundColor: '#67AE66',  border: "3px solid black", borderRadius:"5px"}}>
+                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}> /1024 <br /> <br /> <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br />  moistVar </b>
                 </Button>
               </Grid>
               <Grid item xs={false} align ="left">
                 <p style={{width:"4vw"}}>&nbsp;</p>
               </Grid>
               <Grid item xs={false} align ="left">
-                <Button disabled="true" style={{width:"20vw", height:"35vh",backgroundColor: '#5F815F',  border: "3px solid black", borderRadius:"5px"}}>
-                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>Days<br /> <br /> <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br /> timeVar </b>
+                <Button disabled="true" style={{width:"20vw", height:"25vh",backgroundColor: '#5F815F',  border: "3px solid black", borderRadius:"5px"}}>
+                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>Days <br /> <br />  <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br />  timeVar </b>
                 </Button>
               </Grid>
             </Grid>
@@ -168,7 +168,7 @@ export default class PlantPage extends Component{
               </Grid>
               <Grid item xs={false} align ="left">
                 <Button style={{width:"20vw", backgroundColor: '#D9EFD5',  border: "3px solid black", borderRadius:"5px"}}>
-                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>See Data</b>
+                  <p style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>See Data</p>
                 </Button>
               </Grid>
               <Grid item xs={false} align ="left">
@@ -176,7 +176,7 @@ export default class PlantPage extends Component{
               </Grid>
               <Grid item xs={false} align ="left">
                 <Button style={{width:"20vw", backgroundColor: '#D9EFD5',  border: "3px solid black", borderRadius:"5px"}}>
-                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>See Data</b>
+                  <p style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>See Data</p>
                 </Button>
               </Grid>
               <Grid item xs={false} align ="left">
@@ -184,7 +184,7 @@ export default class PlantPage extends Component{
               </Grid>
               <Grid item xs={false} align ="left">
                 <Button style={{width:"20vw", backgroundColor: '#D9EFD5',  border: "3px solid black", borderRadius:"5px"}}>
-                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>See Data</b>
+                  <p style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>See Data</p>
                 </Button>
               </Grid>
               <Grid item xs={false} align ="left">
@@ -192,7 +192,7 @@ export default class PlantPage extends Component{
               </Grid>
               <Grid item xs={false} align ="left">
                 <Button style={{width:"20vw", backgroundColor: '#D9EFD5',  border: "3px solid black", borderRadius:"5px"}}>
-                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>See Data</b>
+                  <p style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>See Data</p>
                 </Button>
               </Grid>
             </Grid>
