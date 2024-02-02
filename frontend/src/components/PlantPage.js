@@ -5,9 +5,9 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import FormHelperText from "@mui/material/FormHelperText";
-import FormControl from "@mui/material/FormControl"
+import FormControl from "@mui/material/FormControl";
 import {Link } from "react-router-dom";
-import Radio from "@mui/material/Radio";;
+import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormcontrolLabel from "@mui/material/FormControlLabel";
 import HomeIcon from "@mui/icons-material/HomeRounded";
@@ -27,7 +27,6 @@ export default class PlantPage extends Component{
         return (
           <body style={{margin: "0", padding: 0, backgroundColor:"white", height:"100vh", width:"100vw", position:"relative"}}>
             {/* Solid Rectangle at top of page*/}
-            {/* TODO: Change to be a grid of 4 different colored rectangles*/}
             <div style={{display: "inline-block", width:"100vw", height:"3vh", background:"#68AC67", align:"center" }}></div>
             
             {/* MUI Home Icon and Camera Icon*/}
@@ -197,6 +196,7 @@ export default class PlantPage extends Component{
               </Grid>
             </Grid>
 
+            {/* Solid Rectangle at bottom of page*/}
             <div style={{position:"absolute", bottom:0, display: "inline-block", width:"100vw", height:"3vh", background:"#68AC67", align:"center" }}></div>
 
 
