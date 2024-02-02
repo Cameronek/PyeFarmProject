@@ -23,10 +23,11 @@ export default class SearchPage extends Component{
               </Grid>
             </Grid>
 
+            
             {/* Button to contact devs / report bugs */}
             <Grid container spacing={0}>
               <Grid item xs={false} align ="left">
-                <p style={{width:"0.8vw"}}>&nbsp;</p>
+                <p style={{width:"0.8vw"}}> &nbsp; </p>
               </Grid>
               <Grid item xs={false}>
                 <Button style={{width:"12vw", backgroundColor: '#D9EFD5',  border: "3px solid black", borderRadius:"5px"}}>
@@ -48,13 +49,8 @@ export default class SearchPage extends Component{
               <span>&nbsp;</span>
             </Grid>
 
-            <Grid container justifyContent="center" display="flex" flexDirection={column}>
-              <Grid item xs={false} align="center">
-                <b style={{color:"black", font:"Oxygen", fontSize:20, wordBreak:"break-word"}}> Search for a plant </b>
-              </Grid>
-              <Grid item xs={false} align="center">
-                <TextField id="outlined-basic" label="Find a Plant" variant="outlined"></TextField>
-              </Grid>
+            <Grid item xs={false} align="center">
+              <TextField id="outlined-basic" label="Find a Plant" variant="outlined"></TextField>
             </Grid>
             
           </body>
