@@ -1,6 +1,9 @@
 # PyeFarmProject
 
----
+NOTE THAT PROJECT HAS 3 MAIN SECTIONS, SEPARATED BY FOLDERS
+-- Frontend (frontend development) 
+-- Monitoring (for api)
+-- PyeFarmProject (mostly configuration)
 
 ## Team members
 
