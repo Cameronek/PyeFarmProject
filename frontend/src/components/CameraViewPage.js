@@ -13,6 +13,8 @@ import FormcontrolLabel from "@mui/material/FormControlLabel";
 import HomeIcon from "@mui/icons-material/HomeRounded";
 import CameraIcon from "@mui/icons-material/CameraAltRounded";
 
+import Greenhouse from "../../static/images/greenhouse.jpg";
+
 export default class CameraViewPage extends Component{
     constructor(props){
         super(props);
@@ -47,6 +49,10 @@ export default class CameraViewPage extends Component{
             {/* Page Spacing */}
             <Grid>
             <span>&nbsp;&nbsp;</span>
+            </Grid>
+
+            <Grid container justifyContent="center">
+              <img style= {{width:"60vw", height:"60vh"}} src={Greenhouse} alt="logo" />
             </Grid>
     
             {/* Solid Rectangle at bottom of page*/}
