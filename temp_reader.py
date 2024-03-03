@@ -51,5 +51,5 @@ def temp_reader(pin_num):
             
             
         else:
-            print("Sensor Error")
+            print("Check sensor connected to pin ", pin_num)
         time.sleep(4)
