@@ -39,7 +39,7 @@ export default class SearchPage extends Component{
             {/* Project Title & Location Name*/}
             <Grid container justifyContent="center" spacing={3}>
               <Grid item xs={false} align="center">
-                <b style={{color:"black", font:"Oxygen", fontSize:35}}> Greenhouse Automation System </b>
+                <b style={{color:"black", font:"Oxygen", fontSize:35}}> Greenhouse Automation System test </b>
                 <b style={{color:"black", font:"Oxygen", fontSize:25}}> <br/> Pye Farm </b>
               </Grid>
             </Grid>
