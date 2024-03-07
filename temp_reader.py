@@ -23,26 +23,27 @@ def temp_reader(pin_num):
     
             # create new table that includes data and time and datapin of temp sensor
             # to identify what sensor is giving what reading
-            cursor.execute("""CREATE TABLE IF NOT EXISTS air_readings_detailed (
-                        data_pin integer,
-                        date text,
-                        time text,
-                        temp real,
-                        humid real
+            cursor.execute("""CREATE TABLE IF NOT EXISTS new_air_readings (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        data_pin INTEGER,
+                        date TEXT,
+                        time TEXT,
+                        temp REAL,
+                        humid REAL
                         )""")
 
             # get current date and time of data collection
             cur_datetime = datetime.datetime.now()
-            cur_date = cur_datetime.date()
-            cur_time = cur_datetime.time()
+            cur_date = str(cur_datetime.date())
+            cur_time = str(cur_datetime.time())
     
             #print("Air Temperature: {0:0.1f} C Humidity: {1:0.1f} %".format(temp,humidity))
             
             # insert data into database
-            cursor.execute("INSERT INTO air_readings_detailed VALUES ({}, '{}', '{}', {}, {})".format(pin_num, cur_date, cur_time, temp, humidity))
+            cursor.execute("INSERT INTO new_air_readings (data_pin, date, time, temp, humid) VALUES (?,?,?,?,?)",(pin_num, cur_date, cur_time, temp, humidity))
             conn.commit()
             
-            cursor.execute("SELECT * FROM air_readings_detailed WHERE data_pin=4")
+            cursor.execute("SELECT * FROM new_air_readings WHERE data_pin=4")
             
             conn.commit()
             
@@ -52,4 +53,6 @@ def temp_reader(pin_num):
             
         else:
             print("Check sensor connected to pin ", pin_num)
-        time.sleep(4)
+        time.sleep(10)
+        
+            

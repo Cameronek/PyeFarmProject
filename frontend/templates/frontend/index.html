@@ -20,7 +20,28 @@
         <div id="main">
             <div id="app"></div>
         </div>
-
+	
         <script src ="{% static "frontend/main.js" %}"></script>
+	<h1> </h1>
+	<h1> Latest Air Temp Readings </h1>
+	<table>
+		<thread>
+			<tr>
+				<th>Date</th>
+				<th>Time</th>
+				<th>Temp</th>
+				<th>Humidity</th>
+			</tr>
+		</thread>
+		<tbody>
+				<tr>
+					<td>{{readings.date}}</td>
+					<td>{{readings.time}}</td>
+					<td>{{readings.temp}}</td>
+					<td>{{readings.humid}}</td>
+				</tr>
+		</tbody>
+	</table>
+	<p> {{readings}} </p>
     </body>
 </html>

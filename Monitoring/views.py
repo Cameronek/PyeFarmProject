@@ -4,6 +4,8 @@ from .models import Member
 from .serializers import MemberSerializer, CreateMemberSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from .models import Temp
+
 
 class MemberView(generics.ListAPIView):
     queryset = Member.objects.all()
@@ -23,3 +25,6 @@ class CreateMemberView(APIView):
 # Create your views here.
 #def Homepage(request):
 #    return HttpResponse("Welcome to the Homepage :)")
+def index(request):
+    temps = Temp.objects.all()
+    return render(request, 'templates/frontend/index.html', {'temps': temps})
