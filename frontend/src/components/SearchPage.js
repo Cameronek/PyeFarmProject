@@ -2,8 +2,8 @@ import React, { Component} from "react";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
-import Box from "@mui/material/Box"
+
+import {SelectComponent} from './SelectComponent'; 
 
 export default class SearchPage extends Component{
     constructor(props){
@@ -24,6 +24,9 @@ export default class SearchPage extends Component{
             </Grid>
 
             
+            {/* TODO: MAYBE ADD ABILITY TO CREATE A NEW PLOT  */}
+
+
             {/* Button to contact devs / report bugs */}
             <Grid container spacing={0}>
               <Grid item xs={false} align ="left">
@@ -49,10 +52,13 @@ export default class SearchPage extends Component{
               <span>&nbsp;</span>
             </Grid>
 
-            <Grid item xs={false} align="center">
-              <TextField id="outlined-basic" label="Find a Plant" variant="outlined"></TextField>
+            <Grid container justifyContent="center">
+              <Grid item xs={false} align="center">
+                <SelectComponent ></SelectComponent>
+              </Grid>
             </Grid>
-            
+         
+
           </body>
 
         );
