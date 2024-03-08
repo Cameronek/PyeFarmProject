@@ -72,8 +72,8 @@ export function SelectComponent() {
     </Grid>
 
     <Grid item xs={false} align ="center">
-      <Button style={{backgroundColor: '#68AC67',  border: "3px solid black", borderRadius:"5px", }}variant="contained" disabled={!isOptionSelected} component={Link} to={options.find(option => option.value === selectedOption)?.route}>
-        <Typography sx={{ wordBreak: "break-word", width:"10vw", color:"black", font:"Oxygen", fontSize:15,}}> Go To Plant Plot </Typography>
+      <Button style={{backgroundColor: '#D9EFD5',  border: "3px solid black", borderRadius:"5px", }}variant="contained" disabled={!isOptionSelected} component={Link} to={options.find(option => option.value === selectedOption)?.route}>
+        <Typography sx={{ wordBreak: "break-word", width:"10vw", color:"black", font:"Oxygen", fontSize:15,}}> Go To Selected Plant Plot </Typography>
       </Button>
     </Grid>
 
