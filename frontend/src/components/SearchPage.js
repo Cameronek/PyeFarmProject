@@ -2,11 +2,14 @@ import React, { Component} from "react";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-
+import {Link} from "react-router-dom";
 import {SelectComponent} from './SelectComponent'; 
 
 // temporary import
 import tempPlant from "../../static/images/plant.png"
+
+// temporary camera page link
+let cameraHref = (window.location.href).concat("/plant/cameraview");
 
 export default class SearchPage extends Component{
     constructor(props){
@@ -86,10 +89,6 @@ export default class SearchPage extends Component{
             <Grid>
               <span>&nbsp;</span>
             </Grid>
-
-            <Grid>
-              <span>&nbsp;</span>
-            </Grid>
          
          {/* Splitting the screen in two -- for greenhouse parameters & for camera view */}
             <div style={splitScreen}>
@@ -102,7 +101,7 @@ export default class SearchPage extends Component{
 
                 <Grid>
                   <span>&nbsp;</span>
-                </Grid>s
+                </Grid>
 
                 <Grid>
                   <span>&nbsp;</span>
@@ -172,6 +171,10 @@ export default class SearchPage extends Component{
 
               </div>
 
+
+                {/* Greenhouse Photo and Button */}   
+                {/* TODO: Modify formatting once we are mebedding actual greenhouse images */}    
+
               <div style={rightHalf}>
 
                 <Grid>
@@ -182,9 +185,25 @@ export default class SearchPage extends Component{
                   <span>&nbsp;</span>
                 </Grid>
 
+
                 <Grid container justifyContent="center">
-                  <img style= {{width:"40vw", height:"40vh"}} src={tempPlant} alt="logo" />
+                  <img style= {{width:"35vw", height:"40vh"}} src={tempPlant} alt="logo" />
                 </Grid>
+
+                <Grid>
+                  <span>&nbsp;</span>
+                </Grid>
+
+                <Grid container spacing={0} justifyContent="center">
+                  <Grid item xs={false} align = "center">
+                    <Link to={cameraHref}>
+                      <Button margin="0 auto" display="block" style={{width:"30vw", backgroundColor: '#D9EFD5',  border: "3px solid black", borderRadius:"5px"}}>
+                        <p style={{width:"30vw", color:"black", font:"Oxygen", fontSize:20}}>See Larger Camera View</p>
+                      </Button>
+                    </Link>
+                  </Grid>
+                </Grid>
+
               </div>
 
             </div>
