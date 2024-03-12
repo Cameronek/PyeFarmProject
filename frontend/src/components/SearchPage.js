@@ -190,7 +190,7 @@ export default class SearchPage extends Component{
 
 
                 <Grid container justifyContent="center">
-                  <img style= {{width:"35vw", height:"40vh"}} src={Greenhouse} alt="logo" />
+                  <img style= {{width:"30vw", height:"35vh"}} src={Greenhouse} alt="logo" />
                 </Grid>
 
                 <Grid>
