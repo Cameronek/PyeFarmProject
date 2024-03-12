@@ -7,6 +7,7 @@ import {SelectComponent} from './SelectComponent';
 
 // temporary import
 import tempPlant from "../../static/images/plant.png"
+import Greenhouse from "../../static/images/greenhouse.jpg";
 
 // temporary camera page link
 let cameraHref = (window.location.href).concat("/plant/cameraview");
@@ -189,7 +190,7 @@ export default class SearchPage extends Component{
 
 
                 <Grid container justifyContent="center">
-                  <img style= {{width:"35vw", height:"40vh"}} src={tempPlant} alt="logo" />
+                  <img style= {{width:"35vw", height:"40vh"}} src={Greenhouse} alt="logo" />
                 </Grid>
 
                 <Grid>
@@ -198,7 +199,8 @@ export default class SearchPage extends Component{
 
                 <Grid container spacing={0} justifyContent="center">
                   <Grid item xs={false} align = "center">
-                    <Link to={cameraHref}>
+                    {/* TEMPORARY: THIS NEEDS TO BE FIXED */}
+                    <Link to="http://127.0.0.1:8000/plant/cameraview">
                       <Button margin="0 auto" display="block" style={{width:"30vw", backgroundColor: '#D9EFD5',  border: "3px solid black", borderRadius:"5px"}}>
                         <p style={{width:"30vw", color:"black", font:"Oxygen", fontSize:20}}>See Larger Camera View</p>
                       </Button>
