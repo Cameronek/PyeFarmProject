@@ -55,9 +55,11 @@ export default class SearchPage extends Component{
                 <p style={{width:"0.8vw"}}> &nbsp; </p>
               </Grid>
               <Grid item xs={false}>
+                <Link target="-blank" to="https://docs.google.com/forms/d/e/1FAIpQLSeCX9WV2xAr00RpXRROU_GwY4gwvxMH4MnRD---sqy2ExwSlA/viewform?usp=sf_link">
                 <Button style={{width:"12vw", backgroundColor: '#D9EFD5',  border: "3px solid black", borderRadius:"5px"}}>
                   <Typography sx={{ wordBreak: "break-word", width:"10vw", color:"black", font:"Oxygen", fontSize:15,}}> Contact Developers </Typography>
                 </Button>
+                </Link>
               </Grid>
             </Grid>
 
