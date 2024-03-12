@@ -1,8 +1,0 @@
-.node
-node_modules/
-__pycache__/
-/frontend/node_modules
-/frontend/package-lock.json
-/frontend/static/frontend/main.js
-*.log
-*.tmp
