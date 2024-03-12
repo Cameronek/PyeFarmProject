@@ -26,7 +26,7 @@ export default class CameraViewPage extends Component{
             {/* Solid Rectangle at top of page*/}
             <div style={{display: "inline-block", width:"100vw", height:"3vh", background:"#68AC67", align:"center" }}></div>
           
-            {/* CameraIcon, Plant Name, Date & Time*/}
+            {/* Home Icon */}
             <Grid item xs={false} align ="left">
               <Link to="/">
                 <IconButton roboto-label="home" style={{color:'black'}}>
