@@ -13,6 +13,7 @@ import FormcontrolLabel from "@mui/material/FormControlLabel";
 import HomeIcon from "@mui/icons-material/HomeRounded";
 import CameraIcon from "@mui/icons-material/CameraAltRounded";
 import PlantIcon from "@mui/icons-material/ParkRounded";
+import GraphFunction from "./GraphFunction";
 //import '../../static/css/index.css';s
 
 // Global vars

@@ -14,37 +14,6 @@ import {
   Label
 } from 'recharts';
 
-// useEffect(() => {
-
-//     // (async () => {
-//     //   const db = await open({
-//     //     filename: '/public/test.db',
-//     //     driver: sqlite3.Database
-//     //   });
-
-//     //   const rows = await db.all('SELECT * FROM your_table');
-//     //   if (rows.length > 0) {
-//     //     const titles = Object.keys(rows[0]);
-//     //     setXTitle(titles[0]);
-//     //     setYTitle(titles[1]);
-//     //     setData(rows);
-
-//     //     const domain = d3.extent(rows, d => +d[titles[1]]);
-//     //     setYDomain(domain);
-//     //   }
-
-//     d3.csv("/test_data.csv").then(data => {
-//       if (data.length > 0) {
-//         const titles = data.columns;
-//         setXTitle(titles[0]);
-//         setYTitle(titles[1]);
-//         setData(data);
-
-//         const domain = d3.extent(data, d => +d[titles[1]]);
-//         setYDomain(domain);
-//       }
-//     });
-//   }, []);
 
 export default function GraphFunction(props) {
 
@@ -61,27 +30,6 @@ export default function GraphFunction(props) {
         }
     
     }, []);
-
-    // // read sqlite3 database
-    // (async () => {
-
-    //   const db = await open({
-    //     filename: '/public/test.db',
-    //     driver: sqlite3.Database
-    //   });
-
-    //   const rows = await db.all('SELECT * FROM your_table');
-    //   if (rows.length > 0) {
-    //     const titles = Object.keys(rows[0]);
-    //     setXTitle(titles[0]);
-    //     setYTitle(titles[1]);
-    //     setData(rows);
-
-    //     const domain = d3.extent(rows, d => +d[titles[1]]);
-    //     setYDomain(domain);
-    //   }
-
-    // })();
 
 
   const [data, setData] = useState([]);
