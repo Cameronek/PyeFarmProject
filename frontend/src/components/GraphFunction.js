@@ -42,8 +42,8 @@ export default function GraphFunction(props) {
         return (
             <div>
             <LineChart
-                width={500}
-                height={300}
+                width={800 * props.width_scale}
+                height={300 * props.height_scale}
                 data={data}
                 margin={{
                 top: 5,
@@ -54,7 +54,7 @@ export default function GraphFunction(props) {
             >
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey={xTitle}>
-                <Label value={xTitle} offset={-10} position="insideBottom" />
+                <Label value={xTitle} offset={-12} dx={-45} position="insideBottom" />
                 </XAxis>
                 <YAxis domain={yDomain}>
                 <Label value={yTitle} angle={-90} dy={80} position="insideLeft" />
@@ -63,7 +63,7 @@ export default function GraphFunction(props) {
                 <Line
                 type="monotone"
                 dataKey={yTitle}
-                stroke="#8884d8"
+                stroke="#68AC67"
                 activeDot={{ r: 8 }}
                 legendType="none"
                 />
