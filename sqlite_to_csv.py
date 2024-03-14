@@ -95,12 +95,73 @@ def parse_csv(filename_csv, array_of_table_names):
     # Close the csv file
     f2.close()
 
+# format the csv files in the "parsed_data" directory
+def format_csv(input_file, time_index, data_index, plant_name, time_unit, data_unit):
 
+    # open the csv file specified in parsed_data
+    with open("parsed_data/" + input_file, 'r') as f1:
+        reader = csv.reader(f1)
+        data = list(reader)
+
+    # create a new csv file in formatted_data with the plant name
+    with open("formatted_data/" + plant_name + '.csv', 'w') as f2:
+
+        # The column index specified in time index is written to the first column of the new csv file
+        # The column index specified in data index is written to the second column of the new csv file
+        # The plant name is written to the third column of the new csv file
+        # set the header names to time_unit, data_unit, and plant_name
+        writer = csv.writer(f2)
+        writer.writerow([time_unit, data_unit, plant_name])
+
+        # write the time and data to the new csv file
+        for i in range(len(data)):
+            writer.writerow([data[i][time_index], data[i][data_index], plant_name])
+
+    # Close the csv file
+    f1.close()
+
+    # Close the csv file
+    f2.close()
+
+# Format the time column to be in the format of H/MIN/S with a max of 2 decimal places
+def format_time(csv_file):
+    with open("formatted_data/" + csv_file, 'r') as f1:
+        reader = csv.reader(f1)
+        data = list(reader)
+
+    with open("formatted_data/" + csv_file, 'w') as f2:
+        writer = csv.writer(f2)
+        # writer.writerow(['Time', 'Data', 'Plant'])
+        for i in range(len(data)):
+            time = data[i][0]
+
+            # if not the top row
+            if i != 0:
+                time = time.split(':')
+
+                # remove any characters beyond the 6th character
+                time[2] = time[2][:6]
+                # reformat the time to be in the format of H:MIN:S 
+                time = time[0] + ":" + time[1] + ":" + time[2].split('.')[0]
+
+            writer.writerow([time, data[i][1], data[i][2]])
+
+    f1.close()
+    f2.close()
+
+
+        
+    
 
 
 # Run the functions
 sqlite_to_csv(filename, filename_csv)
 tables = ["air_readings", "air_readings_detailed", "new_air_readings"]
 parse_csv(filename_csv, tables)
+
+# test format csv on air_readings_detailed.csv
+format_csv("air_readings_detailed.csv", 2, 3, "Air_Temperature", "H/MIN/S", "Degrees C")
+
+format_time("Air_Temperature.csv")
 
 
