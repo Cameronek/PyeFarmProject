@@ -16,7 +16,8 @@ import PlantIcon from "@mui/icons-material/ParkRounded";
 //import '../../static/css/index.css';s
 
 // Global vars
-let cameraHref = (window.location.href).concat("/cameraview");
+//let cameraHref = (window.location.href).concat("/cameraview");
+let cameraHref = "http://" + window.location.hostname + ":" + window.location.port + "/cameraview";
 
 export default class PlantPage extends Component{
     constructor(props){

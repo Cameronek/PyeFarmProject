@@ -10,7 +10,7 @@ import tempPlant from "../../static/images/plant.png"
 import Greenhouse from "../../static/images/greenhouse.jpg";
 
 // temporary camera page link
-let cameraHref = (window.location.href).concat("/plant/cameraview");
+let cameraHref = "http://" + window.location.hostname + ":" + window.location.port + "/cameraview";
 
 export default class SearchPage extends Component{
     constructor(props){
@@ -200,7 +200,7 @@ export default class SearchPage extends Component{
                 <Grid container spacing={0} justifyContent="center">
                   <Grid item xs={false} align = "center">
                     {/* TEMPORARY: THIS NEEDS TO BE FIXED */}
-                    <Link to="http://127.0.0.1:8000/plant/cameraview">
+                    <Link to={cameraHref}>
                       <Button margin="0 auto" display="block" style={{width:"30vw", backgroundColor: '#D9EFD5',  border: "3px solid black", borderRadius:"5px"}}>
                         <p style={{width:"30vw", color:"black", font:"Oxygen", fontSize:20}}>See Larger Camera View</p>
                       </Button>

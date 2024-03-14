@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom';
 // TODO: Change these options to be taken from a database API
 const options = [
 { value: 'Plot 1', route: "/plant"},
-{ value: 'Plot 2', route: "/plant/cameraview"},
+{ value: 'Plot 2', route: "/cameraview"},
 { value: 'Plot 3', route: "/plant"},
 { value: 'Plot 4', route: "/plant"},
 { value: 'Plot 5', route: "/plant"},

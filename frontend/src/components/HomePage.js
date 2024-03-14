@@ -18,7 +18,7 @@ export default class HomePage extends Component{
                     {/* TODO: Dynamic routing and page creation (may not be implemented) */}
                     <Route exact path='/' element={<SearchPage/>}></Route>
                     <Route exact path='/plant' element={<PlantPage/>}></Route>
-                    <Route exact path='/plant/cameraview' element={<CameraViewPage/>}></Route>
+                    <Route exact path='/cameraview' element={<CameraViewPage/>}></Route>
                 </Routes>
             </Router>
     );
