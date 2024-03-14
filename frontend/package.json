@@ -27,7 +27,9 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.15.3",
     "@mui/material": "^5.15.3",
+    "d3": "^7.9.0",
     "file-loader": "^6.2.0",
-    "react-router-dom": "^6.21.1"
+    "react-router-dom": "^6.21.1",
+    "recharts": "^2.12.2"
   }
 }
