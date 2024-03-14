@@ -24,8 +24,10 @@ export default function GraphFunction(props) {
           setXTitle(titles[0]);
           setYTitle(titles[1]);
           setData(data);
-    
-          const domain = d3.extent(data, d => +d[titles[1]]);
+          
+          // set domain of y axis to be 0 to max value of the data
+          // const domain = d3.extent(data, d => +d[titles[1]]);
+          const domain = [(d3.min(data , d => +d[titles[1]])) - 1, d3.max(data, d => +d[titles[1]]) + 1];
           setYDomain(domain);
         }
     
@@ -36,6 +38,7 @@ export default function GraphFunction(props) {
   const [xTitle, setXTitle] = useState("");
   const [yTitle, setYTitle] = useState("");
   const [yDomain, setYDomain] = useState([0, 0]);
+  const [filename, setFilename] = useState(props.filename);
 
   
 
@@ -54,7 +57,7 @@ export default function GraphFunction(props) {
             >
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey={xTitle}>
-                <Label value={xTitle} offset={-12} dx={-45} position="insideBottom" />
+                <Label value={xTitle} offset={-20} dx={-45} position="insideBottom" />
                 </XAxis>
                 <YAxis domain={yDomain}>
                 <Label value={yTitle} angle={-90} dy={80} position="insideLeft" />
@@ -65,7 +68,10 @@ export default function GraphFunction(props) {
                 dataKey={yTitle}
                 stroke="#68AC67"
                 activeDot={{ r: 8 }}
-                legendType="none"
+
+                // give label with title of the line
+                // label={{ value: filename, position: 'top' }}
+                legendType="line"
                 />
             </LineChart>
             </div>

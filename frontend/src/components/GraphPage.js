@@ -18,25 +18,42 @@ export default class HomePage extends Component{
     render() {
         return (
 
+
             
-          <body style={{margin: "0", padding: 0, backgroundColor:"white", height:"100vh", width:"100vw", position:"relative"}}>
-           
+          <body style={{margin: "0", padding: 0, backgroundColor:"white", height:"100vh", width:"100vw", position:"relative", overflow:"scroll"}}>
            {/* Test Hello World message */}
 
-            {/* <Grid container justifyContent="center">
+            <Grid container justifyContent="center">
                 <Grid item xs={false} align="center">
-                    <h1>Hello World</h1>
+                    <h1>Air_Temperature.csv</h1>
                 </Grid>
-            </Grid> */}
+            </Grid>
 
             {/* Call Graph Function */}
             <Grid container justifyContent="center">
               <Grid item xs={false} align="center">
                 {/* <GraphFunction></GraphFunction> */}
                 {/*Graph function with test_data.csv passed as a prop */}
-                <GraphFunction filename="test_data.csv"></GraphFunction>
 
-              </Grid>
+                <Grid
+                container
+                spacing={0}
+                direction="column"
+                alignItems="center"
+                justifyContent="center"
+                sx={{ minHeight: '100vh' }}
+                >
+                <Grid item xs={3}>
+                    <GraphFunction filename="Air_Temperature.csv" width_scale={2} height_scale={3}></GraphFunction>
+                </Grid>
+                </Grid>
+                </Grid>
+
+                {/* Center to center middle of page */}
+                {/* <Grid item xs={false} align="center">
+                    <GraphFunction filename="Air_Temperature.csv" width_scale={5} height_scale={5}></GraphFunction>
+                </Grid>
+              </Grid> */}
             </Grid>
             
         </body>
