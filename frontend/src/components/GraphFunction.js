@@ -46,9 +46,10 @@ import {
 //     });
 //   }, []);
 
-export default function GraphFunction() {
+export default function GraphFunction(props) {
 
-    d3.csv("../../static/csv/test_data.csv").then(data => {
+    // d3.csv("../../static/csv/test_data.csv").then(data => {
+      d3.csv("../../static/csv/" + props.filename).then(data => {
         if (data.length > 0) {
           const titles = data.columns;
           setXTitle(titles[0]);

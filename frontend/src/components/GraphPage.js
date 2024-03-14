@@ -11,6 +11,7 @@ import Grid from "@mui/material/Grid";
 
 
 export default class HomePage extends Component{
+    
     constructor(props){
         super(props);
     }
@@ -31,7 +32,10 @@ export default class HomePage extends Component{
             {/* Call Graph Function */}
             <Grid container justifyContent="center">
               <Grid item xs={false} align="center">
-                <GraphFunction></GraphFunction>
+                {/* <GraphFunction></GraphFunction> */}
+                {/*Graph function with test_data.csv passed as a prop */}
+                <GraphFunction filename="test_data.csv"></GraphFunction>
+
               </Grid>
             </Grid>
             
