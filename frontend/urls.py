@@ -9,5 +9,7 @@ urlpatterns = [
     path('', index),
     path('plant', index),
     path('plant/cameraview', index),
+    path('graph', index),
+    path('graph/', index),
     re_path(r'^favicon\.ico$',RedirectView.as_view(url='/static/images/favicon.ico'))
 ]

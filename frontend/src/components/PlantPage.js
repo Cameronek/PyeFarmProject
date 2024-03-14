@@ -13,6 +13,7 @@ import FormcontrolLabel from "@mui/material/FormControlLabel";
 import HomeIcon from "@mui/icons-material/HomeRounded";
 import CameraIcon from "@mui/icons-material/CameraAltRounded";
 import PlantIcon from "@mui/icons-material/ParkRounded";
+import GraphFunction from "./GraphFunction";
 //import '../../static/css/index.css';s
 
 // Global vars
@@ -25,7 +26,7 @@ export default class PlantPage extends Component{
 
     render() {
         return (
-          <body style={{margin: "0", padding: 0, backgroundColor:"white", height:"100vh", width:"100vw", position:"relative"}}>
+          <body style={{margin: "0", padding: 0, backgroundColor:"white", height:"100vh", width:"100vw", position:"relative", overflow:"scroll"}}>
             {/* Solid Rectangle at top of page*/}
             <div style={{display: "inline-block", width:"100vw", height:"3vh", background:"#68AC67", align:"center" }}></div>
             
@@ -55,7 +56,11 @@ export default class PlantPage extends Component{
                 <PlantIcon style={{fontSize:90, fill: '#68AC67'}}></PlantIcon>
               </Grid>
               <Grid item xs={false} align="center">
-                <b style={{color:"black", font:"Oxygen", fontSize:40}}> Plot 1 </b>
+
+              <b style={{color:"black", font:"Oxygen", fontSize:40}}> Plot 1 </b>
+                {/*Graph function with test_data.csv passed as a prop */}
+                <GraphFunction filename="test_data.csv" width_scale={1.5} height_scale={1.5}></GraphFunction>
+
               </Grid>
               <Grid item xs={false} align="center">
                 <span>&nbsp;&nbsp;</span>
@@ -205,8 +210,13 @@ export default class PlantPage extends Component{
               </Grid>
             </Grid>
 
+
+            {/* Empty Lines for page spacing */}
+            <Grid>
+            <span>&nbsp;&nbsp;</span>
+            </Grid>
             {/* Solid Rectangle at bottom of page*/}
-            <div style={{position:"absolute", bottom:0, display: "inline-block", width:"100vw", height:"3vh", background:"#68AC67", align:"center" }}></div>
+            <div style={{ bottom:0, display: "inline-block", width:"100vw", height:"3vh", background:"#68AC67", align:"center", position:"bottom"}}></div>
 
 
           </body>
