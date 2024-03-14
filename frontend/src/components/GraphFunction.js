@@ -14,27 +14,6 @@ import {
   Label
 } from 'recharts';
 
-// import csv_data from "../../static/csv/test_data.csv";
-
-// d3.csv("../../static/csv/test_data.csv").then(data => {
-//     if (data.length > 0) {
-//       const titles = data.columns;
-//       setXTitle(titles[0]);
-//       setYTitle(titles[1]);
-//       setData(data);
-
-//       const domain = d3.extent(data, d => +d[titles[1]]);
-//       setYDomain(domain);
-//     }
-
-//     const domain = d3.extent(data, d => +d[titles[1]]);
-//     setYDomain(domain);
-
-// }, []);
-
-
-
-
 // useEffect(() => {
 
 //     // (async () => {
@@ -81,6 +60,28 @@ export default function GraphFunction() {
         }
     
     }, []);
+
+    // // read sqlite3 database
+    // (async () => {
+
+    //   const db = await open({
+    //     filename: '/public/test.db',
+    //     driver: sqlite3.Database
+    //   });
+
+    //   const rows = await db.all('SELECT * FROM your_table');
+    //   if (rows.length > 0) {
+    //     const titles = Object.keys(rows[0]);
+    //     setXTitle(titles[0]);
+    //     setYTitle(titles[1]);
+    //     setData(rows);
+
+    //     const domain = d3.extent(rows, d => +d[titles[1]]);
+    //     setYDomain(domain);
+    //   }
+
+    // })();
+
 
   const [data, setData] = useState([]);
   const [xTitle, setXTitle] = useState("");
