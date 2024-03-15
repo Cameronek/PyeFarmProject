@@ -21,5 +21,8 @@ urlpatterns = [
     #path('', include('Monitoring.urls')),
     path('admin/', admin.site.urls),
     path('', include('frontend.urls')),
+
+    # Temp
+    path('', include('Monitoring.urls'),)
     #path('api-auth/', include('rest_framework.urls'))
 ]

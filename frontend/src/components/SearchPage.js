@@ -15,8 +15,44 @@ let cameraHref = (window.location.href).concat("/plant/cameraview");
 export default class SearchPage extends Component{
     constructor(props){
         super(props);
+        this.state = 
+        {
+          name: null
+        }
     }
+
+
+    componentDidMount() {
+      //const itemId = this.props.itemId;  // Assuming itemId is passed as a prop
+      fetch(`/api/getNameByID/${1}`)
+          .then(response => {
+              if (!response.ok) {
+                  throw new Error('Item not found');
+              }
+              return response.json();
+          })
+          .then(name => {
+              this.setState({ name: name });
+          })
+          .catch(error => {
+              console.error('Error fetching item:', error);
+          });
+  }
+
+
+
+
+
+
+
+
+
+
+
     render() {
+
+      const { name } = this.state;
+
 
       const splitScreen = {
         display: 'flex',
@@ -35,10 +71,23 @@ export default class SearchPage extends Component{
 
         return(
 
+
+
+          
           <body style={{margin: "0", padding: 0, backgroundColor:"white", height:"100vh", width:"100vw", position:"relative"}}>
             {/* Solid Rectangle at top of page*/}
             <div style={{display: "inline-block", width:"100vw", height:"3vh", background:"#68AC67", align:"center" }}></div>
         
+
+
+            <div>
+                <span>{name.firstName}</span>
+                <span>{name.lastName}</span>
+                {/* Render other fields as needed */}
+            </div>
+
+
+
             {/* Whitespace below rectangle */}
             <Grid container spacing={0}>
               <Grid item xs={false} align ="left">

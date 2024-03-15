@@ -1,6 +1,7 @@
 from django.urls import path
 from .views import MemberView
+from .views import getNameByID
 
 urlpatterns = [
-    path('/home', MemberView.as_view()),
+    path('api/getNameByID', getNameByID, name='getNameByID'),
 ]
