@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import {Link} from "react-router-dom";
 import {SelectComponent} from './SelectComponent'; 
+import GraphFunction from "./GraphFunction";
 
 // temporary import
 import tempPlant from "../../static/images/plant.png"
@@ -13,9 +14,17 @@ import Greenhouse from "../../static/images/greenhouse.jpg";
 let cameraHref = (window.location.href).concat("/plant/cameraview");
 
 export default class SearchPage extends Component{
-    constructor(props){
-        super(props);
-    }
+  constructor(props){
+    super(props);
+    this.state = {
+      showTemperatureGraph: true,
+    };
+  }
+
+  handleButtonClick = () => {
+    this.setState(prevState => ({ showTemperatureGraph: !prevState.showTemperatureGraph }));
+  }
+
     render() {
 
       const splitScreen = {
@@ -171,6 +180,41 @@ export default class SearchPage extends Component{
                     <p style={{width:"3vw"}}>&nbsp;</p>
                   </Grid>
                 </Grid>
+
+
+                <Grid>
+                  <span>&nbsp;</span>
+                </Grid>
+                {/* button to swap between Temperature and Humidity graphs, use if statement to change the graph, stay on page */}
+                <Grid item xs={false} align="center">
+                  <Button 
+                  style={{width:"20vw", backgroundColor: '#D9EFD5',  border: "3px solid black", borderRadius:"5px"}}
+                  onClick={this.handleButtonClick}
+                >
+                  <b style={{width:"19vw", color:"black", font:"Oxygen", fontSize:20}}>Swap between temperature and humidity graph</b>
+                </Button>
+                </Grid>
+
+              {/* Temperature Graph */}
+              {this.state.showTemperatureGraph && (
+                <Grid container justifyContent="center">
+                  <Grid item xs={false} align="center">
+                    <h1>Air Temperature</h1>
+                    <GraphFunction filename="Air_Temperature.csv" width_scale={1} height_scale={1}></GraphFunction>
+                  </Grid>
+                </Grid>
+              )}
+
+
+                {/* Humidity Graph */}
+                {!this.state.showTemperatureGraph && (
+                  <Grid container justifyContent="center">
+                    <Grid item xs={false} align="center">
+                      <h1>Air Humidity</h1>
+                      <GraphFunction filename="Air_Humidity.csv" width_scale={1} height_scale={1}></GraphFunction>
+                    </Grid>
+                  </Grid>
+                )}
 
               </div>
 

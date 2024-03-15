@@ -23,11 +23,11 @@ export default class HomePage extends Component{
           <body style={{margin: "0", padding: 0, backgroundColor:"white", height:"100vh", width:"100vw", position:"relative", overflow:"scroll"}}>
            {/* Test Hello World message */}
 
-            <Grid container justifyContent="center">
+            {/* <Grid container justifyContent="center">
                 <Grid item xs={false} align="center">
                     <h1>Air_Temperature.csv</h1>
                 </Grid>
-            </Grid>
+            </Grid> */}
 
             {/* Call Graph Function */}
             <Grid container justifyContent="center">
@@ -44,7 +44,19 @@ export default class HomePage extends Component{
                 sx={{ minHeight: '100vh' }}
                 >
                 <Grid item xs={3}>
-                    <GraphFunction filename="Air_Temperature.csv" width_scale={2} height_scale={3}></GraphFunction>
+
+                    <h1>Air_Temperature.csv</h1>
+                    <GraphFunction filename="Air_Temperature.csv" width_scale={1} height_scale={1}></GraphFunction>
+                    
+                    <h1>Air_Humidity.csv</h1>
+                    <GraphFunction filename="Air_Humidity.csv" width_scale={1} height_scale={1}></GraphFunction>
+                    
+                    <h1>Soil_Moisture.csv</h1>
+                    <GraphFunction filename="Soil_Moisture.csv" width_scale={1} height_scale={1}></GraphFunction>
+                    
+                    <h1>Soil_Temperature.csv</h1>
+                    <GraphFunction filename="Soil_Temperature.csv" width_scale={1} height_scale={1}></GraphFunction>
+                    
                 </Grid>
                 </Grid>
                 </Grid>

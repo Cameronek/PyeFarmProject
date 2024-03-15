@@ -4,15 +4,19 @@ import csv
 import sqlite3
 import os
 
-filename = input('Enter the name of the sqlite db file: ')
-filename_csv = filename.split('.')[0] + '.csv'
+# filename = input('Enter the name of the sqlite db file: ')
+# filename_csv = filename.split('.')[0] + '.csv'
+
+# file paths
+formatted_data_path = "frontend/static/formatted_data"
+parsed_data_path = "frontend/static/parsed_data"
 
 # make "formatted_data" and "parsed_data" directories if they don't exist
-if not os.path.exists("formatted_data"):
-    os.makedirs("formatted_data")
+if not os.path.exists(formatted_data_path):
+    os.makedirs(formatted_data_path)
 
-if not os.path.exists("parsed_data"):
-    os.makedirs("parsed_data")
+if not os.path.exists(parsed_data_path):
+    os.makedirs(parsed_data_path)
 
 def sqlite_to_csv(filename, filename_csv):
 
@@ -66,7 +70,7 @@ def parse_csv(filename_csv, array_of_table_names):
     # For each of the tables in the array
     for table in array_of_table_names:
         # Create a new csv file
-        with open("parsed_data/" + table + '.csv', 'w') as f2:
+        with open(parsed_data_path + "/" + table + '.csv', 'w') as f2:
             
             # find the line number of the table name by finding a matching string
             table_line = 0
@@ -99,12 +103,12 @@ def parse_csv(filename_csv, array_of_table_names):
 def format_csv(input_file, time_index, data_index, plant_name, time_unit, data_unit):
 
     # open the csv file specified in parsed_data
-    with open("parsed_data/" + input_file, 'r') as f1:
+    with open(parsed_data_path + "/" + input_file, 'r') as f1:
         reader = csv.reader(f1)
         data = list(reader)
 
     # create a new csv file in formatted_data with the plant name
-    with open("formatted_data/" + plant_name + '.csv', 'w') as f2:
+    with open(formatted_data_path + "/" + plant_name + '.csv', 'w') as f2:
 
         # The column index specified in time index is written to the first column of the new csv file
         # The column index specified in data index is written to the second column of the new csv file
@@ -125,11 +129,11 @@ def format_csv(input_file, time_index, data_index, plant_name, time_unit, data_u
 
 # Format the time column to be in the format of H/MIN/S with a max of 2 decimal places
 def format_time(csv_file):
-    with open("formatted_data/" + csv_file, 'r') as f1:
+    with open(formatted_data_path + "/" + csv_file, 'r') as f1:
         reader = csv.reader(f1)
         data = list(reader)
 
-    with open("formatted_data/" + csv_file, 'w') as f2:
+    with open(formatted_data_path + "/" + csv_file, 'w') as f2:
         writer = csv.writer(f2)
         # writer.writerow(['Time', 'Data', 'Plant'])
         for i in range(len(data)):
@@ -154,14 +158,53 @@ def format_time(csv_file):
     
 
 
-# Run the functions
-sqlite_to_csv(filename, filename_csv)
-tables = ["air_readings", "air_readings_detailed", "new_air_readings"]
-parse_csv(filename_csv, tables)
+# # Run the functions
+# sqlite_to_csv(filename, filename_csv)
+# tables = ["air_readings", "air_readings_detailed", "new_air_readings"]
+# parse_csv(filename_csv, tables)
 
-# test format csv on air_readings_detailed.csv
-format_csv("air_readings_detailed.csv", 2, 3, "Air_Temperature", "H/MIN/S", "Degrees C")
+# # test format csv on air_readings_detailed.csv
+# format_csv("air_readings_detailed.csv", 2, 3, "Air_Temperature", "H/MIN/S", "Degrees C")
 
-format_time("Air_Temperature.csv")
+# format_time("Air_Temperature.csv")
 
 
+def format_data(filename_sql, filename_csv, tables, time_index, data_index, plant_name, time_unit, data_unit):
+    sqlite_to_csv(filename_sql, filename_csv)
+    parse_csv(filename_csv, tables)
+    format_csv('sensor_values.csv', time_index, data_index, plant_name, time_unit, data_unit)
+    format_time(plant_name + '.csv')
+
+
+filename_sql = "db.sqlite3"
+filename_csv= "db.csv"
+tables = ["sensor_values"]
+time_index = 2
+data_index = 3 # air_temp
+plant_name = "Air_Temperature"
+time_unit = "H/MIN/S"
+data_unit = "Degrees C"
+
+# for air temperature
+format_data(filename_sql, filename_csv, tables, time_index, data_index, plant_name, time_unit, data_unit)
+
+data_index = 4 # air_humidity
+plant_name = "Air_Humidity"
+data_unit = "Percent (%)"
+
+# for air humidity
+format_data(filename_sql, filename_csv, tables, time_index, data_index, plant_name, time_unit, data_unit)
+
+data_index = 5 # soil_temp
+plant_name = "Soil_Temperature"
+data_unit = "Degrees C"
+
+# for soil temperature
+format_data(filename_sql, filename_csv, tables, time_index, data_index, plant_name, time_unit, data_unit)
+
+data_index = 6 # soil_moisture
+plant_name = "Soil_Moisture"
+data_unit = "Percent (%)"
+
+# for soil moisture
+format_data(filename_sql, filename_csv, tables, time_index, data_index, plant_name, time_unit, data_unit)
