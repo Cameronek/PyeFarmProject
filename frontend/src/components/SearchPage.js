@@ -1,9 +1,11 @@
 import React, { Component} from "react";
+import { render } from "react-dom"
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import {Link} from "react-router-dom";
 import {SelectComponent} from './SelectComponent'; 
+
 
 // temporary import
 import tempPlant from "../../static/images/plant.png"
@@ -32,8 +34,28 @@ export default class SearchPage extends Component{
         flex: 1,
         width: '50vw',
       };
+	var current_air_temp;
+	var current_air_humid;
 
         return(
+	$(document).ready(function() {
+		$.ajax({
+			url:'/data',
+			type:'GET',
+			success: function(response) {
+			console.log(response);
+			var num_data_entries = response.length;
+			console.log(num_data_entries);
+			current_air_temp = response[num_data_entries - 1].air_temp;
+			current_air_humid = response[num_data_entries - 1].air_humid
+			console.log("current air temp: " + current_air_temp);		
+			console.log("current air humidity: " + current_air_humid);
+			$('#cur_temp').text(current_air_temp);	
+			$('#cur_humid').text(current_air_humid);
+				}
+
+			});
+		}),
 
           <body style={{margin: "0", padding: 0, backgroundColor:"white", height:"100vh", width:"100vw", position:"relative"}}>
             {/* Solid Rectangle at top of page*/}
@@ -45,8 +67,7 @@ export default class SearchPage extends Component{
                 <p style={{height:"0.5vh", fontSize:1}}>&nbsp;</p>
               </Grid>
             </Grid>
-
-            
+           
             {/* TODO: MAYBE ADD ABILITY TO CREATE A NEW PLOT  */}
 
 
@@ -118,15 +139,15 @@ export default class SearchPage extends Component{
                   </Grid>
                   <Grid item xs={false} align ="left">
                     <Button disabled="true" style={{width:"20vw", backgroundColor: '#67AE66',  border: "3px solid black", borderRadius:"5px"}}>
-                      <b style={{width:"19vw", color:"black", font:"Oxygen", fontSize:20}}>Greenhouse Temperature</b>
+                      <b style={{width:"19vw", color:"black", font:"Oxygen", fontSize:20}}> GREENHOUSE TEMPERATURE</b>
                     </Button>
                   </Grid>
                   <Grid item xs={false} align ="left">
                     <p style={{width:"3vw"}}>&nbsp;</p>
                   </Grid>
                   <Grid item xs={false} align ="left">
-                    <Button disabled="true" style={{width:"20vw", backgroundColor: '#67AE66',  border: "3px solid black", borderRadius:"5px"}}>
-                      <b style={{width:"19vw", color:"black", font:"Oxygen", fontSize:20}}>°C</b>
+                    <Button id = "cur_temp" disabled="true" style={{width:"20vw", backgroundColor: '#67AE66',  border: "3px solid black", borderRadius:"5px"}}>
+                      <b style={{width:"19vw", color:"black", font:"Oxygen", fontSize:20}}></b>
                     </Button>
                   </Grid>
                   <Grid item xs={false} align ="left">
@@ -135,7 +156,6 @@ export default class SearchPage extends Component{
                 </Grid>
 
                 {/* Empty Lines for page spacing */}
-
                 <Grid>
                   <span>&nbsp;</span>
                 </Grid>
@@ -163,8 +183,8 @@ export default class SearchPage extends Component{
                     <p style={{width:"3vw"}}>&nbsp;</p>
                   </Grid>
                   <Grid item xs={false} align ="left">
-                    <Button disabled="true" style={{width:"20vw", backgroundColor: '#85B658',  border: "3px solid black", borderRadius:"5px"}}>
-                      <b style={{width:"19vw", color:"black", font:"Oxygen", fontSize:20}}>%</b>
+                    <Button id = "cur_humid" disabled="true" style={{width:"20vw", backgroundColor: '#85B658',  border: "3px solid black", borderRadius:"5px"}}>
+                      <b style={{width:"19vw", color:"black", font:"Oxygen", fontSize:20}}></b>
                     </Button>
                   </Grid>
                   <Grid item xs={false} align ="left">
