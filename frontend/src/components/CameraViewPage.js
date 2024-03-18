@@ -41,8 +41,8 @@ export default class CameraViewPage extends Component{
                 <CameraIcon style={{fontSize:90, fill: 'black'}}></CameraIcon>
               </Grid>
               <Grid item xs={false} align="center">
-                <b style={{color:"black", font:"Oxygen", fontSize:35}}> PlantName Here  </b>
-                <b style={{color:"black", font:"Oxygen", fontSize:30}}> <br/> DateTime Here</b>
+                <b style={{color:"black", font:"Oxygen", fontSize:35}}> Last Picture Taken:  </b>
+                <b style={{color:"black", font:"Oxygen", fontSize:30}}> <br/> 2024-03-14, 18:02:03</b>
               </Grid>
             </Grid>
 
