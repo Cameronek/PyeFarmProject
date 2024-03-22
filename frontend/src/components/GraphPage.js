@@ -6,16 +6,33 @@ import CameraViewPage from "./CameraViewPage";
 import GraphPage from "./GraphPage";
 import GraphFunction from "./GraphFunction";
 import Grid from "@mui/material/Grid";
+import { useLocation } from 'react-router-dom';
 
 // *** HOMEPAGE is effectively an extension of App.js containing page routing
 
 
-export default class HomePage extends Component{
+export default class GraphPageMain extends Component{
     
     constructor(props){
         super(props);
-    }
+        this.state = {
+            filename: localStorage.getItem('filename'),
+            title: localStorage.getItem('title'),
+            // plot: localStorage.getItem('plot'),
+            // width_scale: window.innerWidth - 50 / 800,
+            // height_scale: window.innerHeight - 50 / 300,
+            };
+        }
+
+
     render() {
+
+        const { filename } = this.state;
+        const { title } = this.state;
+        // const { width_scale } = this.state;
+        // const { height_scale } = this.state;
+
+
         return (
 
 
@@ -45,17 +62,10 @@ export default class HomePage extends Component{
                 >
                 <Grid item xs={3}>
 
-                    <h1>Air_Temperature.csv</h1>
-                    <GraphFunction filename="Air_Temperature.csv" width_scale={1} height_scale={1}></GraphFunction>
+                    {/* <h1>Filename: {filename}</h1> */}
+                    <h1>{title}</h1>
+                    <GraphFunction filename={filename} width_scale={2.5} height_scale={2}></GraphFunction>
                     
-                    <h1>Air_Humidity.csv</h1>
-                    <GraphFunction filename="Air_Humidity.csv" width_scale={1} height_scale={1}></GraphFunction>
-                    
-                    <h1>Soil_Moisture.csv</h1>
-                    <GraphFunction filename="Soil_Moisture.csv" width_scale={1} height_scale={1}></GraphFunction>
-                    
-                    <h1>Soil_Temperature.csv</h1>
-                    <GraphFunction filename="Soil_Temperature.csv" width_scale={1} height_scale={1}></GraphFunction>
                     
                 </Grid>
                 </Grid>

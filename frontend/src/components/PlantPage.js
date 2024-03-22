@@ -55,13 +55,7 @@ export default class PlantPage extends Component{
               <Grid item xs={false} align="center">
                 <PlantIcon style={{fontSize:90, fill: '#68AC67'}}></PlantIcon>
               </Grid>
-              <Grid item xs={false} align="center">
-
-              <b style={{color:"black", font:"Oxygen", fontSize:40}}> Plot 1 </b>
-                {/*Graph function with test_data.csv passed as a prop */}
-                <GraphFunction filename="test_data.csv" width_scale={1.5} height_scale={1.5}></GraphFunction>
-
-              </Grid>
+              
               <Grid item xs={false} align="center">
                 <span>&nbsp;&nbsp;</span>
               </Grid>
@@ -180,16 +174,46 @@ export default class PlantPage extends Component{
                 <p style={{width:"4vw"}}>&nbsp;</p>
               </Grid>
               <Grid item xs={false} align ="left">
+
+                {/* Link to graph page SOIL TEMPERATURE*/}
                 <Button style={{width:"20vw", backgroundColor: '#D9EFD5',  border: "3px solid black", borderRadius:"5px"}}>
+
+                  <Link
+                  // to = "http://127.0.0.1:8000/graph"
+                  to='/graph/'
+                  onClick={() => {localStorage.setItem('filename', 'Soil_Temperature.csv')
+                  localStorage.setItem('title', 'Soil Temperature for Plot 1')}}
+                  style={{ textDecoration: 'none', color: 'inherit' }}
+
+                  >
                   <p style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>See Data</p>
+
+                  </Link>
                 </Button>
+
+
+
+
+
               </Grid>
               <Grid item xs={false} align ="left">
                 <p style={{width:"4vw"}}>&nbsp;</p>
               </Grid>
               <Grid item xs={false} align ="left">
+                {/* Link to graph page SOIL TEMPERATURE*/}
                 <Button style={{width:"20vw", backgroundColor: '#D9EFD5',  border: "3px solid black", borderRadius:"5px"}}>
+
+                  <Link
+                  // to = "http://127.0.0.1:8000/graph"
+                  to='/graph/'
+                  onClick={() => {localStorage.setItem('filename', 'Soil_Moisture.csv')
+                  localStorage.setItem('title', 'Soil Moisture for Plot 1')}}
+                  style={{ textDecoration: 'none', color: 'inherit' }}
+
+                  >
                   <p style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>See Data</p>
+
+                  </Link>
                 </Button>
               </Grid>
               <Grid item xs={false} align ="left">
