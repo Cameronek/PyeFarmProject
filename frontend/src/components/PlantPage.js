@@ -113,7 +113,7 @@ export default class PlantPage extends Component{
               </Grid>
               <Grid item xs={false} align ="left">
                 <Button disabled="true" style={{width:"20vw", backgroundColor: '#5F815F',  border: "3px solid black", borderRadius:"5px"}}>
-                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>Date Planted</b>
+                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>Last Reading</b>
                 </Button>
               </Grid>
             </Grid>
@@ -130,7 +130,7 @@ export default class PlantPage extends Component{
               </Grid>
               <Grid item xs={false} align ="left">
                 <Button disabled="true" style={{width:"20vw", height:"25vh",backgroundColor: '#A3BD8B',  border: "3px solid black", borderRadius:"5px"}}>
-                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}> 20.4°C <br /> <br />  <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br />  Celcius </b>
+                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}> 20.4 <br /> <br />  <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br />  °C</b>
                 </Button>
               </Grid>
               <Grid item xs={false} align ="left">
@@ -138,7 +138,7 @@ export default class PlantPage extends Component{
               </Grid>
               <Grid item xs={false} align ="left">
                 <Button disabled="true" style={{width:"20vw", height:"25vh",backgroundColor: '#85B658',  border: "3px solid black", borderRadius:"5px"}}>
-                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}> 31.6% <br /> <br /> <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br />  Percent </b>
+                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}> 31.6 <br /> <br /> <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br />  %</b>
                 </Button>
               </Grid>
               <Grid item xs={false} align ="left">
@@ -146,7 +146,7 @@ export default class PlantPage extends Component{
               </Grid>
               <Grid item xs={false} align ="left">
                 <Button disabled="true" style={{width:"20vw", height:"25vh",backgroundColor: '#67AE66',  border: "3px solid black", borderRadius:"5px"}}>
-                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}> 0, 25 <br /> <br /> <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br /> Hours, Minutes </b>
+                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}> 2024-03-16, 18:00:35.42 <br /> <br /> <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br /> Date, Time </b>
                 </Button>
               </Grid>
               <Grid item xs={false} align ="left">
@@ -154,7 +154,7 @@ export default class PlantPage extends Component{
               </Grid>
               <Grid item xs={false} align ="left">
                 <Button disabled="true" style={{width:"20vw", height:"25vh",backgroundColor: '#5F815F',  border: "3px solid black", borderRadius:"5px"}}>
-                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}> 2024-03-16 <br /> <br />  <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br />  Date </b>
+                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}> 2024-03-16, 18:02:09.43 <br /> <br />  <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br />  Date, Time </b>
                 </Button>
               </Grid>
             </Grid>
