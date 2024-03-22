@@ -242,10 +242,16 @@ export default class PlantPage1 extends Component{
             <Grid>
             <span>&nbsp;&nbsp;</span>
             </Grid>
+
+            <Grid>
+                <span>&nbsp;</span>
+            </Grid>
+
+
             {/* Solid Rectangle at bottom of page*/}
-            <div style={{ bottom:0, display: "inline-block", width:"100vw", height:"3vh", background:"#68AC67", align:"center", position:"bottom"}}></div>
+            <div style={{position:"absolute", bottom:0, display: "inline-block", width:"100vw", height:"3vh", background:"#68AC67", align:"center" }}></div>
 
-
+          
           </body>
         );
     }
