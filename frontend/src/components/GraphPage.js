@@ -1,12 +1,14 @@
 import React, { Component } from "react";
-import PlantPage from "./PlantPage";
+import PlantPage from "./PlantPage1";
 import {BrowserRouter as Router, Routes, Route, Link, Navigate} from "react-router-dom";
 import SearchPage from "./SearchPage";
 import CameraViewPage from "./CameraViewPage";
 import GraphPage from "./GraphPage";
 import GraphFunction from "./GraphFunction";
 import Grid from "@mui/material/Grid";
+import PlantIcon from "@mui/icons-material/ParkRounded";
 import { useLocation } from 'react-router-dom';
+import IconButton from "@mui/material/IconButton";
 
 // *** HOMEPAGE is effectively an extension of App.js containing page routing
 
@@ -18,6 +20,7 @@ export default class GraphPageMain extends Component{
         this.state = {
             filename: localStorage.getItem('filename'),
             title: localStorage.getItem('title'),
+            page: localStorage.getItem('page'),
             // plot: localStorage.getItem('plot'),
             // width_scale: window.innerWidth - 50 / 800,
             // height_scale: window.innerHeight - 50 / 300,
@@ -29,11 +32,12 @@ export default class GraphPageMain extends Component{
 
         const { filename } = this.state;
         const { title } = this.state;
-        // const { width_scale } = this.state;
-        // const { height_scale } = this.state;
+        const{ page } = this.state;
 
 
         return (
+
+            
 
 
             
@@ -47,6 +51,20 @@ export default class GraphPageMain extends Component{
             </Grid> */}
 
             {/* Call Graph Function */}
+
+            
+            <Grid container spacing={0.75}>
+              {/* <Grid item xs={1} align ="left"></Grid> */}
+              <Grid item xs={false} align ="left">
+              <Link to={page}>
+                  <IconButton roboto-label="PlantPage" style={{color:'black'}}>
+                    <PlantIcon style={{fontSize:60}}/>
+                  </IconButton>
+                </Link>
+              </Grid>
+              </Grid>
+
+
             <Grid container justifyContent="center">
               <Grid item xs={false} align="center">
                 {/* <GraphFunction></GraphFunction> */}

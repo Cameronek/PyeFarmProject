@@ -5,6 +5,7 @@ import Button from "@mui/material/Button";
 import {Link} from "react-router-dom";
 import {SelectComponent} from './SelectComponent'; 
 import GraphFunction from "./GraphFunction";
+import { useState } from "react";
 
 // temporary import
 import tempPlant from "../../static/images/plant.png"
@@ -18,14 +19,31 @@ export default class SearchPage extends Component{
     super(props);
     this.state = {
       showTemperatureGraph: true,
+      plotUrls: {
+        'Plot 1': '/plant1',
+        'Plot 2': '/plant2',
+        'Plot 3': '/plant3',
+      },
     };
+
+    // Create a ref to store the selected plot locally
+    this.selectedPlotRef = React.createRef();
   }
 
   handleButtonClick = () => {
     this.setState(prevState => ({ showTemperatureGraph: !prevState.showTemperatureGraph }));
   }
 
+  handlePlotChange = (event) => {
+    this.setState({ selectedPlot: event.target.value });
+  }
+  
+
     render() {
+
+      const { selectedPlot, plotUrls } = this.state;
+
+
 
       const splitScreen = {
         display: 'flex',
@@ -91,6 +109,21 @@ export default class SearchPage extends Component{
               <Grid item xs={false} align="center">
                 <SelectComponent ></SelectComponent>
               </Grid>
+
+              {/* DROPDOWN MENU */}
+
+              {/* <Grid item xs={false} align="center">
+              <select value={selectedPlot} onChange={this.handlePlotChange}>
+                <option value="Plot 1">Plot 1</option>
+                <option value="Plot 2">Plot 2</option>
+                <option value="Plot 3">Plot 3</option>
+              </select>
+              <Link to={plotUrls[selectedPlot]}>
+                <button>Go to Plot</button>
+              </Link>
+
+              </Grid> */}
+
             </Grid>
 
             {/* Empty Lines for page spacing */}
@@ -244,7 +277,7 @@ export default class SearchPage extends Component{
                 <Grid container spacing={0} justifyContent="center">
                   <Grid item xs={false} align = "center">
                     {/* TEMPORARY: THIS NEEDS TO BE FIXED */}
-                    <Link to="http://127.0.0.1:8000/plant/cameraview">
+                    <Link to="http://127.0.0.1:8000/plant1/cameraview">
                       <Button margin="0 auto" display="block" style={{width:"30vw", backgroundColor: '#D9EFD5',  border: "3px solid black", borderRadius:"5px"}}>
                         <p style={{width:"30vw", color:"black", font:"Oxygen", fontSize:20}}>See Larger Camera View</p>
                       </Button>
