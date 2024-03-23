@@ -13,7 +13,7 @@ import FormcontrolLabel from "@mui/material/FormControlLabel";
 import HomeIcon from "@mui/icons-material/HomeRounded";
 import CameraIcon from "@mui/icons-material/CameraAltRounded";
 
-import Greenhouse from "../../static/images/greenhouse.jpg";
+import Greenhouse from "../../static/images/test.jpg";
 
 export default class CameraViewPage extends Component{
     constructor(props){

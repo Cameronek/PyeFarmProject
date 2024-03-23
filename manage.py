@@ -5,7 +5,6 @@ import sys
 import serial_test
 from threading import Thread
 
-
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'PyeFarmProject.settings')
@@ -21,7 +20,8 @@ def main():
 
 
 if __name__ == '__main__':
-    serial_comm_thread = Thread(target = serial_test.serial_comm, args = ())
-    serial_comm_thread.start()
+    #serial_comm_thread = Thread(target = serial_test.serial_comm, args = ())
+    #serial_comm_thread.start()
+   
     main()
-    serial_comm_thread.join()
+    #serial_comm_thread.join()

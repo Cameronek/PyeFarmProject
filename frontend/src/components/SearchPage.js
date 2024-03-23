@@ -9,10 +9,13 @@ import {SelectComponent} from './SelectComponent';
 
 // temporary import
 import tempPlant from "../../static/images/plant.png"
-import Greenhouse from "../../static/images/greenhouse.jpg";
+import Greenhouse from "../../static/images/test.jpg";
 
 // temporary camera page link
 let cameraHref = (window.location.href).concat("/plant/cameraview");
+
+//global variable for response data
+var response_array;
 
 export default class SearchPage extends Component{
     constructor(props){
@@ -50,8 +53,10 @@ export default class SearchPage extends Component{
 			current_air_humid = response[num_data_entries - 1].air_humid
 			console.log("current air temp: " + current_air_temp);		
 			console.log("current air humidity: " + current_air_humid);
-			$('#cur_temp').text(current_air_temp);	
-			$('#cur_humid').text(current_air_humid);
+			$('#cur_temp').text(current_air_temp + " " + "°C");	
+			$('#cur_humid').text(current_air_humid + " " + "%");
+			response_array = response;
+			console.log(response_array)
 				}
 
 			});
@@ -146,7 +151,7 @@ export default class SearchPage extends Component{
                     <p style={{width:"3vw"}}>&nbsp;</p>
                   </Grid>
                   <Grid item xs={false} align ="left">
-                    <Button id = "cur_temp" disabled="true" style={{width:"20vw", backgroundColor: '#67AE66',  border: "3px solid black", borderRadius:"5px"}}>
+                    <Button id = "cur_temp" disabled="true" style={{width:"20vw", backgroundColor: '#67AE66',  border: "3px solid black", borderRadius:"5px", color:"black"}}>
                       <b style={{width:"19vw", color:"black", font:"Oxygen", fontSize:20}}></b>
                     </Button>
                   </Grid>
@@ -183,7 +188,7 @@ export default class SearchPage extends Component{
                     <p style={{width:"3vw"}}>&nbsp;</p>
                   </Grid>
                   <Grid item xs={false} align ="left">
-                    <Button id = "cur_humid" disabled="true" style={{width:"20vw", backgroundColor: '#85B658',  border: "3px solid black", borderRadius:"5px"}}>
+                    <Button id = "cur_humid" disabled="true" style={{width:"20vw", backgroundColor: '#85B658',  border: "3px solid black", borderRadius:"5px", color:"black"}}>
                       <b style={{width:"19vw", color:"black", font:"Oxygen", fontSize:20}}></b>
                     </Button>
                   </Grid>
