@@ -19,6 +19,7 @@ import GraphFunction from "./GraphFunction";
 // Global vars
 // let cameraHref = (window.location.href).concat("/cameraview");
 let cameraHref = "/plant1/cameraview";
+let plant2Href = (window.location.href).concat("/plant2");
 
 export default class PlantPage2 extends Component{
     constructor(props){
@@ -184,7 +185,7 @@ export default class PlantPage2 extends Component{
                   to='/graph/'
                   onClick={() => {localStorage.setItem('filename', 'Soil_Temperature2.csv')
                   localStorage.setItem('title', 'Soil Temperature for Plot 2')
-                  localStorage.setItem('page', "http://127.0.0.1:8000/plant2")}}
+                  localStorage.setItem('page', plant2Href)}}
                   style={{ textDecoration: 'none', color: 'inherit' }}
 
                   >
@@ -210,7 +211,7 @@ export default class PlantPage2 extends Component{
                   to='/graph/'
                   onClick={() => {localStorage.setItem('filename', 'Soil_Moisture2.csv')
                   localStorage.setItem('title', 'Soil Moisture for Plot 2')
-                  localStorage.setItem('page', "http://127.0.0.1:8000/plant2")}}
+                  localStorage.setItem('page', plant2Href)}}
                   style={{ textDecoration: 'none', color: 'inherit' }}
 
                   >
