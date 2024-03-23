@@ -18,7 +18,7 @@ import {
 export default function GraphFunction(props) {
 
     // d3.csv("../../static/csv/test_data.csv").then(data => {
-      d3.csv("../../static/csv/" + props.filename).then(data => {
+      d3.csv("../../static/formatted_data/" + props.filename).then(data => {
         if (data.length > 0) {
           const titles = data.columns;
           setXTitle(titles[0]);
@@ -50,8 +50,8 @@ export default function GraphFunction(props) {
                 data={data}
                 margin={{
                 top: 5,
-                right: 30,
-                left: 20,
+                right: 40,
+                left: 40,
                 bottom: 50
                 }}
             >
@@ -60,7 +60,7 @@ export default function GraphFunction(props) {
                 <Label value={xTitle} offset={-20} dx={-45} position="insideBottom" />
                 </XAxis>
                 <YAxis domain={yDomain}>
-                <Label value={yTitle} angle={-90} dy={80} position="insideLeft" />
+                <Label value={yTitle} angle={-90} dy={60} dx={-30} position="insideLeft" />
                 </YAxis>
                 <Tooltip />
                 <Line

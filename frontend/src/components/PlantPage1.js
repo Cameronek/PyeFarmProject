@@ -17,9 +17,10 @@ import GraphFunction from "./GraphFunction";
 //import '../../static/css/index.css';s
 
 // Global vars
-let cameraHref = (window.location.href).concat("/cameraview");
+// let cameraHref = (window.location.href).concat("/cameraview");
+let cameraHref = "/plant1/cameraview";
 
-export default class PlantPage extends Component{
+export default class PlantPage1 extends Component{
     constructor(props){
         super(props);
     }
@@ -55,13 +56,7 @@ export default class PlantPage extends Component{
               <Grid item xs={false} align="center">
                 <PlantIcon style={{fontSize:90, fill: '#68AC67'}}></PlantIcon>
               </Grid>
-              <Grid item xs={false} align="center">
-
-              <b style={{color:"black", font:"Oxygen", fontSize:40}}> Plot 1 </b>
-                {/*Graph function with test_data.csv passed as a prop */}
-                <GraphFunction filename="test_data.csv" width_scale={1.5} height_scale={1.5}></GraphFunction>
-
-              </Grid>
+              
               <Grid item xs={false} align="center">
                 <span>&nbsp;&nbsp;</span>
               </Grid>
@@ -180,16 +175,48 @@ export default class PlantPage extends Component{
                 <p style={{width:"4vw"}}>&nbsp;</p>
               </Grid>
               <Grid item xs={false} align ="left">
+
+                {/* Link to graph page SOIL TEMPERATURE*/}
                 <Button style={{width:"20vw", backgroundColor: '#D9EFD5',  border: "3px solid black", borderRadius:"5px"}}>
+
+                  <Link
+                  // to = "http://127.0.0.1:8000/graph"
+                  to='/graph/'
+                  onClick={() => {localStorage.setItem('filename', 'Soil_Temperature1.csv')
+                  localStorage.setItem('title', 'Soil Temperature for Plot 1')
+                  localStorage.setItem('page', "http://127.0.0.1:8000/plant1")}}
+                  style={{ textDecoration: 'none', color: 'inherit' }}
+
+                  >
                   <p style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>See Data</p>
+
+                  </Link>
                 </Button>
+
+
+
+
+
               </Grid>
               <Grid item xs={false} align ="left">
                 <p style={{width:"4vw"}}>&nbsp;</p>
               </Grid>
               <Grid item xs={false} align ="left">
+                {/* Link to graph page SOIL TEMPERATURE*/}
                 <Button style={{width:"20vw", backgroundColor: '#D9EFD5',  border: "3px solid black", borderRadius:"5px"}}>
+
+                  <Link
+                  // to = "http://127.0.0.1:8000/graph"
+                  to='/graph/'
+                  onClick={() => {localStorage.setItem('filename', 'Soil_Moisture1.csv')
+                  localStorage.setItem('title', 'Soil Moisture for Plot 1')
+                  localStorage.setItem('page', "http://127.0.0.1:8000/plant1")}}
+                  style={{ textDecoration: 'none', color: 'inherit' }}
+
+                  >
                   <p style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>See Data</p>
+
+                  </Link>
                 </Button>
               </Grid>
               <Grid item xs={false} align ="left">
@@ -215,10 +242,16 @@ export default class PlantPage extends Component{
             <Grid>
             <span>&nbsp;&nbsp;</span>
             </Grid>
+
+            <Grid>
+                <span>&nbsp;</span>
+            </Grid>
+
+
             {/* Solid Rectangle at bottom of page*/}
-            <div style={{ bottom:0, display: "inline-block", width:"100vw", height:"3vh", background:"#68AC67", align:"center", position:"bottom"}}></div>
+            <div style={{position:"absolute", bottom:0, display: "inline-block", width:"100vw", height:"3vh", background:"#68AC67", align:"center" }}></div>
 
-
+          
           </body>
         );
     }
