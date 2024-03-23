@@ -11,6 +11,8 @@ import { useState } from "react";
 import tempPlant from "../../static/images/plant.png"
 import Greenhouse from "../../static/images/greenhouse.jpg";
 
+
+
 // temporary camera page link
 let cameraHref = (window.location.href).concat("/plant/cameraview");
 
@@ -94,7 +96,7 @@ export default class SearchPage extends Component{
             {/* Project Title & Location Name*/}
             <Grid container justifyContent="center" spacing={3}>
               <Grid item xs={false} align="center">
-                <b style={{color:"black", font:"Oxygen", fontSize:35}}> Greenhouse Automation System</b>
+                <b style={{color:"black", font:"Oxygen", fontSize:35}}> Greenhouse Automation System TE </b>
                 <b style={{color:"black", font:"Oxygen", fontSize:25}}> <br/> Pye Farm </b>
               </Grid>
             </Grid>
@@ -168,7 +170,7 @@ export default class SearchPage extends Component{
                   </Grid>
                   <Grid item xs={false} align ="left">
                     <Button disabled="true" style={{width:"20vw", backgroundColor: '#67AE66',  border: "3px solid black", borderRadius:"5px"}}>
-                      <b style={{width:"19vw", color:"black", font:"Oxygen", fontSize:20}}>°C</b>
+                      <b style={{width:"19vw", color:"black", font:"Oxygen", fontSize:20}}>22.1 °C</b>
                     </Button>
                   </Grid>
                   <Grid item xs={false} align ="left">
@@ -206,7 +208,7 @@ export default class SearchPage extends Component{
                   </Grid>
                   <Grid item xs={false} align ="left">
                     <Button disabled="true" style={{width:"20vw", backgroundColor: '#85B658',  border: "3px solid black", borderRadius:"5px"}}>
-                      <b style={{width:"19vw", color:"black", font:"Oxygen", fontSize:20}}>%</b>
+                      <b style={{width:"19vw", color:"black", font:"Oxygen", fontSize:20}}>16.2 %</b>
                     </Button>
                   </Grid>
                   <Grid item xs={false} align ="left">

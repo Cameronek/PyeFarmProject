@@ -100,7 +100,7 @@ def parse_csv(filename_csv, array_of_table_names):
     f2.close()
 
 # format the csv files in the "parsed_data" directory
-def format_csv(input_file, time_index, data_index, plant_name, time_unit, data_unit):
+def format_csv(input_file, time_index, data_index, plant_name, time_unit, data_unit, year_index):
 
     # open the csv file specified in parsed_data
     with open(parsed_data_path + "/" + input_file, 'r') as f1:
@@ -119,7 +119,7 @@ def format_csv(input_file, time_index, data_index, plant_name, time_unit, data_u
 
         # write the time and data to the new csv file
         for i in range(len(data)):
-            writer.writerow([data[i][time_index], data[i][data_index], plant_name])
+            writer.writerow([ ( data[i][time_index] +" | "+data[i][year_index] ), data[i][data_index], plant_name])
 
     # Close the csv file
     f1.close()
@@ -145,8 +145,8 @@ def format_time(csv_file):
 
                 # remove any characters beyond the 6th character
                 time[2] = time[2][:6]
-                # reformat the time to be in the format of H:MIN:S 
-                time = time[0] + ":" + time[1] + ":" + time[2].split('.')[0]
+                # reformat the time to be in the format of H:MIN:S | year
+                time = time[0] + ":" + time[1] + ":" + time[2].split('.')[0] + " | " + time[2].split('.')[1]
 
             writer.writerow([time, data[i][1], data[i][2]])
 
@@ -169,11 +169,11 @@ def format_time(csv_file):
 # format_time("Air_Temperature.csv")
 
 
-def format_data(filename_sql, filename_csv, tables, time_index, data_index, plant_name, time_unit, data_unit):
+def format_data(filename_sql, filename_csv, tables, time_index, data_index, plant_name, time_unit, data_unit, year_index):
     sqlite_to_csv(filename_sql, filename_csv)
     parse_csv(filename_csv, tables)
-    format_csv('sensor_values.csv', time_index, data_index, plant_name, time_unit, data_unit)
-    format_time(plant_name + '.csv')
+    format_csv('sensor_values.csv', time_index, data_index, plant_name, time_unit, data_unit, year_index)
+    # format_time(plant_name + '.csv')
 
 
 filename_sql = "db.sqlite3"
@@ -182,29 +182,63 @@ tables = ["sensor_values"]
 time_index = 2
 data_index = 3 # air_temp
 plant_name = "Air_Temperature"
-time_unit = "H/MIN/S"
+time_unit = "Hour/Min/Sec | Year/Month/Day"
 data_unit = "Degrees C"
+year_index = 1
 
 # for air temperature
-format_data(filename_sql, filename_csv, tables, time_index, data_index, plant_name, time_unit, data_unit)
+format_data(filename_sql, filename_csv, tables, time_index, data_index, plant_name, time_unit, data_unit, year_index)
 
 data_index = 4 # air_humidity
 plant_name = "Air_Humidity"
 data_unit = "Percent (%)"
 
 # for air humidity
-format_data(filename_sql, filename_csv, tables, time_index, data_index, plant_name, time_unit, data_unit)
+format_data(filename_sql, filename_csv, tables, time_index, data_index, plant_name, time_unit, data_unit, year_index)
 
 data_index = 5 # soil_temp
-plant_name = "Soil_Temperature"
+plant_name = "Soil_Temperature1"
 data_unit = "Degrees C"
 
 # for soil temperature
-format_data(filename_sql, filename_csv, tables, time_index, data_index, plant_name, time_unit, data_unit)
+format_data(filename_sql, filename_csv, tables, time_index, data_index, plant_name, time_unit, data_unit, year_index)
+
+
+data_index = 5 # soil_temp
+plant_name = "Soil_Temperature2"
+data_unit = "Degrees C"
+
+# for soil temperature
+format_data(filename_sql, filename_csv, tables, time_index, data_index, plant_name, time_unit, data_unit, year_index)
+
+
+data_index = 5 # soil_temp
+plant_name = "Soil_Temperature3"
+data_unit = "Degrees C"
+
+# for soil temperature
+format_data(filename_sql, filename_csv, tables, time_index, data_index, plant_name, time_unit, data_unit, year_index)
+
+
 
 data_index = 6 # soil_moisture
-plant_name = "Soil_Moisture"
+plant_name = "Soil_Moisture1"
 data_unit = "Percent (%)"
 
 # for soil moisture
-format_data(filename_sql, filename_csv, tables, time_index, data_index, plant_name, time_unit, data_unit)
+format_data(filename_sql, filename_csv, tables, time_index, data_index, plant_name, time_unit, data_unit, year_index)
+
+data_index = 6 # soil_moisture
+plant_name = "Soil_Moisture2"
+data_unit = "Percent (%)"
+
+# for soil moisture
+format_data(filename_sql, filename_csv, tables, time_index, data_index, plant_name, time_unit, data_unit, year_index)
+
+
+data_index = 6 # soil_moisture
+plant_name = "Soil_Moisture3"
+data_unit = "Percent (%)"
+
+# for soil moisture
+format_data(filename_sql, filename_csv, tables, time_index, data_index, plant_name, time_unit, data_unit, year_index)
