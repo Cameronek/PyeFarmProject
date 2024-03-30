@@ -11,7 +11,7 @@ import { useState } from "react";
 
 // temporary import
 import tempPlant from "../../static/images/plant.png"
-import Greenhouse from "../../static/images/test.jpg";
+import Greenhouse from "../../static/images/greenhouse.jpg";
 
 
 

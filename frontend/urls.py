@@ -1,6 +1,7 @@
 from django.urls import path
 from .views import DataView
 from .views import index
+from .views import CompleteDataView
 
 from django.urls import re_path
 from django.views.generic import RedirectView
@@ -15,6 +16,7 @@ urlpatterns = [
     path('plant3', index),
     # path('graph', index),
     path('graph/', index),
-    path('data', DataView.as_view())
+    path('data', DataView.as_view()),
+    path('completeData', CompleteDataView.as_view()),
     re_path(r'^favicon\.ico$',RedirectView.as_view(url='/static/images/favicon.ico'))
 ]

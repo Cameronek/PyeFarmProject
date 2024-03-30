@@ -32,7 +32,8 @@ export default class PlantPage2 extends Component{
 	var current_soil_moisture;
 	
         return (
-	frontend/src/components/PlantPage.js
+	frontend/src/components/PlantPage.js,
+
 	<script src="SearchPage.js"></script>,
 	$(document).ready(function(){
 		console.log(response_array);

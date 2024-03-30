@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from .models import Data
+from .models import Data, CompleteData
 from rest_framework import generics, status
-from .serializers import DataSerializer
+from .serializers import DataSerializer, CompleteDataSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
@@ -11,4 +11,8 @@ def index(request, *args, **kwargs):
 
 class DataView(generics.ListAPIView):
     queryset = Data.objects.all()
-    serializer_class = DataSerializer 
+    serializer_class = DataSerializer
+    
+class CompleteDataView(generics.ListAPIView):
+    queryset = CompleteData.objects.all()
+    serializer_class = CompleteDataSerializer
