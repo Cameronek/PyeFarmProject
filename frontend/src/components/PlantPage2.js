@@ -16,6 +16,7 @@ import PlantIcon from "@mui/icons-material/ParkRounded";
 import GraphFunction from "./GraphFunction";
 //import '../../static/css/index.css';s
 
+
 // Global vars
 // let cameraHref = (window.location.href).concat("/cameraview");
 let cameraHref = "/plant1/cameraview";
@@ -27,8 +28,24 @@ export default class PlantPage2 extends Component{
     }
 
     render() {
+	var current_soil_temp;
+	var current_soil_moisture;
+	
         return (
-          <body style={{margin: "0", padding: 0, backgroundColor:"white", height:"100vh", width:"100vw", position:"relative", overflow:"scroll"}}>
+	frontend/src/components/PlantPage.js
+	<script src="SearchPage.js"></script>,
+	$(document).ready(function(){
+		console.log(response_array);
+		var num_data_entries = response_array.length;
+		current_soil_temp = response_array[num_data_entries - 1].soil_temp;
+		current_soil_moisture = response_array[num_data_entries - 1].soil_moisture;
+		console.log("current soil temp: " + current_soil_temp);
+		console.log("current soil moisture: " + current_soil_moisture);
+		$('#cur_soil_temp').text(current_soil_temp);
+		$('#cur_soil_moisture').text(current_soil_moisture);
+		}),
+	
+          <body style={{margin: "0", padding: 0, backgroundColor:"white", height:"100vh", width:"100vw", position:"relative"}}>
             {/* Solid Rectangle at top of page*/}
             <div style={{display: "inline-block", width:"100vw", height:"3vh", background:"#68AC67", align:"center" }}></div>
             
@@ -129,7 +146,7 @@ export default class PlantPage2 extends Component{
                 <p style={{width:"4vw"}}>&nbsp;</p>
               </Grid>
               <Grid item xs={false} align ="left">
-                <Button disabled="true" style={{width:"20vw", height:"25vh",backgroundColor: '#A3BD8B',  border: "3px solid black", borderRadius:"5px"}}>
+                <Button id="cur_soil_temp" disabled="true" style={{width:"20vw", height:"25vh",backgroundColor: '#A3BD8B',  border: "3px solid black", borderRadius:"5px"}}>
                   <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}> °C <br /> <br />  <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br />  tempVar </b>
                 </Button>
               </Grid>
@@ -137,7 +154,7 @@ export default class PlantPage2 extends Component{
                 <p style={{width:"4vw"}}>&nbsp;</p>
               </Grid>
               <Grid item xs={false} align ="left">
-                <Button disabled="true" style={{width:"20vw", height:"25vh",backgroundColor: '#85B658',  border: "3px solid black", borderRadius:"5px"}}>
+                <Button id="cur_soil_moisture" disabled="true" style={{width:"20vw", height:"25vh",backgroundColor: '#85B658',  border: "3px solid black", borderRadius:"5px"}}>
                   <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}> % <br /> <br /> <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br />  moistVar </b>
                 </Button>
               </Grid>
