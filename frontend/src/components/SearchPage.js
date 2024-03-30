@@ -96,7 +96,7 @@ export default class SearchPage extends Component{
             {/* Project Title & Location Name*/}
             <Grid container justifyContent="center" spacing={3}>
               <Grid item xs={false} align="center">
-                <b style={{color:"black", font:"Oxygen", fontSize:35}}> Greenhouse Automation System TE </b>
+                <b style={{color:"black", font:"Oxygen", fontSize:35}}> Greenhouse Automation System</b>
                 <b style={{color:"black", font:"Oxygen", fontSize:25}}> <br/> Pye Farm </b>
               </Grid>
             </Grid>
@@ -279,7 +279,7 @@ export default class SearchPage extends Component{
                 <Grid container spacing={0} justifyContent="center">
                   <Grid item xs={false} align = "center">
                     {/* TEMPORARY: THIS NEEDS TO BE FIXED */}
-                    <Link to="http://127.0.0.1:8000/plant1/cameraview">
+                    <Link to="http://192.168.2.36:8000/plant1/cameraview">
                       <Button margin="0 auto" display="block" style={{width:"30vw", backgroundColor: '#D9EFD5',  border: "3px solid black", borderRadius:"5px"}}>
                         <p style={{width:"30vw", color:"black", font:"Oxygen", fontSize:20}}>See Larger Camera View</p>
                       </Button>

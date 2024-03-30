@@ -19,7 +19,8 @@ import GraphFunction from "./GraphFunction";
 // Global vars
 // let cameraHref = (window.location.href).concat("/cameraview");
 let cameraHref = "/plant1/cameraview";
-let plant1Href = (window.location.href).concat("/plant1");
+//let plant1Href = "http://172.20.10.4:8000/plant1";
+let plant1Href = "http://192.168.2.36:8000/plant1";
 
 export default class PlantPage1 extends Component{
     constructor(props){
@@ -62,10 +63,8 @@ export default class PlantPage1 extends Component{
                 <span>&nbsp;&nbsp;</span>
               </Grid>
               <Grid item xs={false} align="center">
-                <b style={{color:"black", font:"Oxygen", fontSize:30}}> Plant Name </b>
-                <Button style={{width:"10vw", height:"7vh", backgroundColor: '#D9EFD5',  border: "3px solid black", borderRadius:"5px"}}>
-                  <p style={{width:"15vw", color:"black", font:"Oxygen", fontSize:12}}>Change Name</p>
-                </Button>
+                <b style={{color:"black", font:"Oxygen", fontSize:30}}> Plot 1 </b>
+     
               </Grid>
             </Grid>
 
@@ -130,7 +129,7 @@ export default class PlantPage1 extends Component{
               </Grid>
               <Grid item xs={false} align ="left">
                 <Button disabled="true" style={{width:"20vw", height:"25vh",backgroundColor: '#A3BD8B',  border: "3px solid black", borderRadius:"5px"}}>
-                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}> °C <br /> <br />  <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br />  tempVar </b>
+                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}> 22.81 °C <br /> <br />  <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br />  tempVar </b>
                 </Button>
               </Grid>
               <Grid item xs={false} align ="left">
@@ -138,7 +137,7 @@ export default class PlantPage1 extends Component{
               </Grid>
               <Grid item xs={false} align ="left">
                 <Button disabled="true" style={{width:"20vw", height:"25vh",backgroundColor: '#85B658',  border: "3px solid black", borderRadius:"5px"}}>
-                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}> % <br /> <br /> <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br />  moistVar </b>
+                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}> 59.6 % <br /> <br /> <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br />  moistVar </b>
                 </Button>
               </Grid>
               <Grid item xs={false} align ="left">
@@ -146,7 +145,7 @@ export default class PlantPage1 extends Component{
               </Grid>
               <Grid item xs={false} align ="left">
                 <Button disabled="true" style={{width:"20vw", height:"25vh",backgroundColor: '#67AE66',  border: "3px solid black", borderRadius:"5px"}}>
-                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}> Hours, Minutes <br /> <br /> <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br /> waterVar </b>
+                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}> 18:02 <br /> <br /> <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br /> waterVar </b>
                 </Button>
               </Grid>
               <Grid item xs={false} align ="left">
@@ -154,7 +153,7 @@ export default class PlantPage1 extends Component{
               </Grid>
               <Grid item xs={false} align ="left">
                 <Button disabled="true" style={{width:"20vw", height:"25vh",backgroundColor: '#5F815F',  border: "3px solid black", borderRadius:"5px"}}>
-                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>Days <br /> <br />  <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br />  timeVar </b>
+                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}> 03-15 <br /> <br />  <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br />  timeVar </b>
                 </Button>
               </Grid>
             </Grid>
