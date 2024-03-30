@@ -13,13 +13,16 @@ import FormcontrolLabel from "@mui/material/FormControlLabel";
 import HomeIcon from "@mui/icons-material/HomeRounded";
 import CameraIcon from "@mui/icons-material/CameraAltRounded";
 import PlantIcon from "@mui/icons-material/ParkRounded";
+import GraphFunction from "./GraphFunction";
 //import '../../static/css/index.css';s
 
 
 // Global vars
-let cameraHref = (window.location.href).concat("/cameraview");
+// let cameraHref = (window.location.href).concat("/cameraview");
+let cameraHref = "/plant1/cameraview";
+let plant2Href = (window.location.href).concat("/plant2");
 
-export default class PlantPage extends Component{
+export default class PlantPage2 extends Component{
     constructor(props){
         super(props);
     }
@@ -29,6 +32,7 @@ export default class PlantPage extends Component{
 	var current_soil_moisture;
 	
         return (
+	frontend/src/components/PlantPage.js
 	<script src="SearchPage.js"></script>,
 	$(document).ready(function(){
 		console.log(response_array);
@@ -70,9 +74,7 @@ export default class PlantPage extends Component{
               <Grid item xs={false} align="center">
                 <PlantIcon style={{fontSize:90, fill: '#68AC67'}}></PlantIcon>
               </Grid>
-              <Grid item xs={false} align="center">
-                <b style={{color:"black", font:"Oxygen", fontSize:40}}> Plot 1 </b>
-              </Grid>
+              
               <Grid item xs={false} align="center">
                 <span>&nbsp;&nbsp;</span>
               </Grid>
@@ -191,16 +193,48 @@ export default class PlantPage extends Component{
                 <p style={{width:"4vw"}}>&nbsp;</p>
               </Grid>
               <Grid item xs={false} align ="left">
+
+                {/* Link to graph page SOIL TEMPERATURE*/}
                 <Button style={{width:"20vw", backgroundColor: '#D9EFD5',  border: "3px solid black", borderRadius:"5px"}}>
+
+                  <Link
+                  // to = "http://127.0.0.1:8000/graph"
+                  to='/graph/'
+                  onClick={() => {localStorage.setItem('filename', 'Soil_Temperature2.csv')
+                  localStorage.setItem('title', 'Soil Temperature for Plot 2')
+                  localStorage.setItem('page', plant2Href)}}
+                  style={{ textDecoration: 'none', color: 'inherit' }}
+
+                  >
                   <p style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>See Data</p>
+
+                  </Link>
                 </Button>
+
+
+
+
+
               </Grid>
               <Grid item xs={false} align ="left">
                 <p style={{width:"4vw"}}>&nbsp;</p>
               </Grid>
               <Grid item xs={false} align ="left">
+                {/* Link to graph page SOIL TEMPERATURE*/}
                 <Button style={{width:"20vw", backgroundColor: '#D9EFD5',  border: "3px solid black", borderRadius:"5px"}}>
+
+                  <Link
+                  // to = "http://127.0.0.1:8000/graph"
+                  to='/graph/'
+                  onClick={() => {localStorage.setItem('filename', 'Soil_Moisture2.csv')
+                  localStorage.setItem('title', 'Soil Moisture for Plot 2')
+                  localStorage.setItem('page', plant2Href)}}
+                  style={{ textDecoration: 'none', color: 'inherit' }}
+
+                  >
                   <p style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>See Data</p>
+
+                  </Link>
                 </Button>
               </Grid>
               <Grid item xs={false} align ="left">
@@ -221,7 +255,14 @@ export default class PlantPage extends Component{
               </Grid>
             </Grid>
 
-            {/* Solid Rectangle at bottom of page*/}
+
+            {/* Empty Lines for page spacing */}
+            <Grid>
+            <span>&nbsp;&nbsp;</span>
+            </Grid>
+
+
+             {/* Solid Rectangle at bottom of page*/}
             <div style={{position:"absolute", bottom:0, display: "inline-block", width:"100vw", height:"3vh", background:"#68AC67", align:"center" }}></div>
 
 
