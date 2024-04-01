@@ -30,22 +30,37 @@ export default class PlantPage2 extends Component{
     render() {
 	var current_soil_temp;
 	var current_soil_moisture;
+
+	var plant2_temp;
+	var plant2_moisture;
+	var plant2_date_planted;
+	var plant2_latest_reading;
 	
         return (
-	frontend/src/components/PlantPage.js,
+	$(document).ready(function() {
+		$.ajax({
+			url:'/completeData',
+			type:'GET',
+			success: function(response) {
+			console.log(response);
+			var num_data_entries = response.length;
+			console.log(num_data_entries);
+			plant2_temp = response[num_data_entries - 1].soil_temp2;
+			plant2_moisture = response[num_data_entries -1].soil_moisture2;
+			plant2_date_planted = response[0].date;
+			plant2_latest_reading = response[num_data_entries-1].time;
+			console.log("current plant2 temp: " + plant2_temp);		
+			console.log("current plant2 humidity: " + plant2_moisture);
+			$('#plant2_temp').text(plant2_temp + " " + "°C");	
+			$('#plant2_moisture').text(plant2_moisture + " " + "%");
+			$('#plant2_date_planted').text(plant2_date_planted);
+			$('#plant2_latest_reading').text(plant2_latest_reading);
+			response_array = response;
+			console.log(response_array)
+				}
 
-	<script src="SearchPage.js"></script>,
-	$(document).ready(function(){
-		console.log(response_array);
-		var num_data_entries = response_array.length;
-		current_soil_temp = response_array[num_data_entries - 1].soil_temp;
-		current_soil_moisture = response_array[num_data_entries - 1].soil_moisture;
-		console.log("current soil temp: " + current_soil_temp);
-		console.log("current soil moisture: " + current_soil_moisture);
-		$('#cur_soil_temp').text(current_soil_temp);
-		$('#cur_soil_moisture').text(current_soil_moisture);
+			});
 		}),
-	
           <body style={{margin: "0", padding: 0, backgroundColor:"white", height:"100vh", width:"100vw", position:"relative"}}>
             {/* Solid Rectangle at top of page*/}
             <div style={{display: "inline-block", width:"100vw", height:"3vh", background:"#68AC67", align:"center" }}></div>
@@ -80,10 +95,7 @@ export default class PlantPage2 extends Component{
                 <span>&nbsp;&nbsp;</span>
               </Grid>
               <Grid item xs={false} align="center">
-                <b style={{color:"black", font:"Oxygen", fontSize:30}}> Plant Name </b>
-                <Button style={{width:"10vw", height:"7vh", backgroundColor: '#D9EFD5',  border: "3px solid black", borderRadius:"5px"}}>
-                  <p style={{width:"15vw", color:"black", font:"Oxygen", fontSize:12}}>Change Name</p>
-                </Button>
+                <b style={{color:"black", font:"Oxygen", fontSize:30}}> Plot 2 </b>
               </Grid>
             </Grid>
 
@@ -123,7 +135,7 @@ export default class PlantPage2 extends Component{
               </Grid>
               <Grid item xs={false} align ="left">
                 <Button disabled="true" style={{width:"20vw", backgroundColor: '#67AE66',  border: "3px solid black", borderRadius:"5px"}}>
-                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>Last Watered</b>
+                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>Last Reading</b>
                 </Button>
               </Grid>
               <Grid item xs={false} align ="left">
@@ -147,15 +159,15 @@ export default class PlantPage2 extends Component{
                 <p style={{width:"4vw"}}>&nbsp;</p>
               </Grid>
               <Grid item xs={false} align ="left">
-                <Button id="cur_soil_temp" disabled="true" style={{width:"20vw", height:"25vh",backgroundColor: '#A3BD8B',  border: "3px solid black", borderRadius:"5px"}}>
-                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}> °C <br /> <br />  <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br />  tempVar </b>
+                <Button id="plant2_temp" disabled="true" style={{width:"20vw", height:"25vh",backgroundColor: '#A3BD8B',  border: "3px solid black", borderRadius:"5px", color:"black"}}>
+                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}><br /> <br />  <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br />  tempVar </b>
                 </Button>
               </Grid>
               <Grid item xs={false} align ="left">
                 <p style={{width:"4vw"}}>&nbsp;</p>
               </Grid>
               <Grid item xs={false} align ="left">
-                <Button id="cur_soil_moisture" disabled="true" style={{width:"20vw", height:"25vh",backgroundColor: '#85B658',  border: "3px solid black", borderRadius:"5px"}}>
+                <Button id="plant2_moisture" disabled="true" style={{width:"20vw", height:"25vh",backgroundColor: '#85B658',  border: "3px solid black", borderRadius:"5px", color:"black"}}>
                   <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}> % <br /> <br /> <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br />  moistVar </b>
                 </Button>
               </Grid>
@@ -163,16 +175,16 @@ export default class PlantPage2 extends Component{
                 <p style={{width:"4vw"}}>&nbsp;</p>
               </Grid>
               <Grid item xs={false} align ="left">
-                <Button disabled="true" style={{width:"20vw", height:"25vh",backgroundColor: '#67AE66',  border: "3px solid black", borderRadius:"5px"}}>
-                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}> Hours, Minutes <br /> <br /> <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br /> waterVar </b>
+                <Button id="plant2_latest_reading" disabled="true" style={{width:"20vw", height:"25vh",backgroundColor: '#67AE66',  border: "3px solid black", borderRadius:"5px", color:"black"}}>
+                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}><br /> <br /> <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br /> waterVar </b>
                 </Button>
               </Grid>
               <Grid item xs={false} align ="left">
                 <p style={{width:"4vw"}}>&nbsp;</p>
               </Grid>
               <Grid item xs={false} align ="left">
-                <Button disabled="true" style={{width:"20vw", height:"25vh",backgroundColor: '#5F815F',  border: "3px solid black", borderRadius:"5px"}}>
-                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>Days <br /> <br />  <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br />  timeVar </b>
+                <Button id="plant2_date_planted" disabled="true" style={{width:"20vw", height:"25vh",backgroundColor: '#5F815F',  border: "3px solid black", borderRadius:"5px", color:"black"}}>
+                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}><br /> <br />  <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br />  timeVar </b>
                 </Button>
               </Grid>
             </Grid>

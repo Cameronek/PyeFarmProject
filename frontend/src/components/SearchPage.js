@@ -72,7 +72,7 @@ export default class SearchPage extends Component{
         return(
 	$(document).ready(function() {
 		$.ajax({
-			url:'/data',
+			url:'/completeData',
 			type:'GET',
 			success: function(response) {
 			console.log(response);

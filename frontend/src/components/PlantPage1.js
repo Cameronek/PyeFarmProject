@@ -28,7 +28,37 @@ export default class PlantPage1 extends Component{
     }
 
     render() {
+	var current_air_temp;
+	var current_air_humid;
+	var plant1_temp;
+	var plant1_moisture;
+	var plant1_date_planted;
+	var plant1_latest_reading;
         return (
+	$(document).ready(function() {
+		$.ajax({
+			url:'/completeData',
+			type:'GET',
+			success: function(response) {
+			console.log(response);
+			var num_data_entries = response.length;
+			console.log(num_data_entries);
+			plant1_temp = response[num_data_entries - 1].soil_temp1;
+			plant1_moisture = response[num_data_entries -1].soil_moisture1;
+			plant1_date_planted = response[0].date;
+			plant1_latest_reading = response[num_data_entries-1].time;
+			console.log("current plant1 temp: " + plant1_temp);		
+			console.log("current plant1 humidity: " + plant1_moisture);
+			$('#plant1_temp').text(plant1_temp + " " + "°C");	
+			$('#plant1_moisture').text(plant1_moisture + " " + "%");
+			$('#plant1_date_planted').text(plant1_date_planted);
+			$('#plant1_latest_reading').text(plant1_latest_reading);
+			response_array = response;
+			console.log(response_array)
+				}
+
+			});
+		}),
           <body style={{margin: "0", padding: 0, backgroundColor:"white", height:"100vh", width:"100vw", position:"relative", overflow:"scroll"}}>
             {/* Solid Rectangle at top of page*/}
             <div style={{display: "inline-block", width:"100vw", height:"3vh", background:"#68AC67", align:"center" }}></div>
@@ -104,7 +134,7 @@ export default class PlantPage1 extends Component{
               </Grid>
               <Grid item xs={false} align ="left">
                 <Button disabled="true" style={{width:"20vw", backgroundColor: '#67AE66',  border: "3px solid black", borderRadius:"5px"}}>
-                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>Last Watered</b>
+                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}>Last Reading</b>
                 </Button>
               </Grid>
               <Grid item xs={false} align ="left">
@@ -128,32 +158,32 @@ export default class PlantPage1 extends Component{
                 <p style={{width:"4vw"}}>&nbsp;</p>
               </Grid>
               <Grid item xs={false} align ="left">
-                <Button disabled="true" style={{width:"20vw", height:"25vh",backgroundColor: '#A3BD8B',  border: "3px solid black", borderRadius:"5px"}}>
-                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}> 22.81 °C <br /> <br />  <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br />  tempVar </b>
+                <Button id="plant1_temp" disabled="true" style={{width:"20vw", height:"25vh",backgroundColor: '#A3BD8B',  border: "3px solid black", borderRadius:"5px", color:"black"}}>
+                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}><br /> <br />  <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br />  tempVar </b>
                 </Button>
               </Grid>
               <Grid item xs={false} align ="left">
                 <p style={{width:"4vw"}}>&nbsp;</p>
               </Grid>
               <Grid item xs={false} align ="left">
-                <Button disabled="true" style={{width:"20vw", height:"25vh",backgroundColor: '#85B658',  border: "3px solid black", borderRadius:"5px"}}>
-                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}> 59.6 % <br /> <br /> <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br />  moistVar </b>
+                <Button id="plant1_moisture" disabled="true" style={{width:"20vw", height:"25vh",backgroundColor: '#85B658',  border: "3px solid black", borderRadius:"5px", color:"black"}}>
+                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}><br /> <br /> <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br />  moistVar </b>
                 </Button>
               </Grid>
               <Grid item xs={false} align ="left">
                 <p style={{width:"4vw"}}>&nbsp;</p>
               </Grid>
               <Grid item xs={false} align ="left">
-                <Button disabled="true" style={{width:"20vw", height:"25vh",backgroundColor: '#67AE66',  border: "3px solid black", borderRadius:"5px"}}>
-                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}> 18:02 <br /> <br /> <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br /> waterVar </b>
+                <Button id="plant1_latest_reading" disabled="true" style={{width:"20vw", height:"25vh",backgroundColor: '#67AE66',  border: "3px solid black", borderRadius:"5px", color:"black"}}>
+                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}><br /> <br /> <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br /> waterVar </b>
                 </Button>
               </Grid>
               <Grid item xs={false} align ="left">
                 <p style={{width:"4vw"}}>&nbsp;</p>
               </Grid>
               <Grid item xs={false} align ="left">
-                <Button disabled="true" style={{width:"20vw", height:"25vh",backgroundColor: '#5F815F',  border: "3px solid black", borderRadius:"5px"}}>
-                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}> 03-15 <br /> <br />  <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br />  timeVar </b>
+                <Button id="plant1_date_planted" disabled="true" style={{width:"20vw", height:"25vh",backgroundColor: '#5F815F',  border: "3px solid black", borderRadius:"5px", color:"black"}}>
+                  <b style={{width:"20vw", color:"black", font:"Oxygen", fontSize:20}}><br /> <br />  <div style={{ borderTop: "2px solid #000000 ", marginLeft: 0, marginRight: 0 }}></div> <br />  timeVar </b>
                 </Button>
               </Grid>
             </Grid>
