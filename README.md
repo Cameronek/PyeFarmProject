@@ -1,9 +1,5 @@
-# PyeFarmProject
-
-NOTE THAT PROJECT HAS 3 MAIN SECTIONS, SEPARATED BY FOLDERS
--- Frontend (frontend development) 
--- Monitoring (for api)
--- PyeFarmProject (mostly configuration)
+## NOTE THAT IN THE CURRENT FINALIZED VERSION OF THE PROJECT, THE WEB APPLICATION CANNOT BE RAN WITHOUT THE APPROPRIATE HARDWARE
+If you have any questions about this project, please contact cameronek@mun.ca, or the email of another team member.
 
 ## Team members
 
@@ -75,3 +71,12 @@ OR
 - 1. ``npm install @mui/material @mui/styled-engine-sc styled-components``
 - 2. ``npm install @mui/icons-material``
 - 3. ``npm install @fontsource/roboto``
+
+
+# PyeFarmProject
+
+NOTE THAT PROJECT HAS 3 MAIN SECTIONS, SEPARATED BY FOLDERS
+-- Frontend (frontend development) 
+-- Monitoring (for api)
+-- PyeFarmProject (mostly configuration)
+
